@@ -35,9 +35,8 @@ function Slider() {
             <Card.Body className="card-align ">
               <Card.Title className="text-light">{prod.title} </Card.Title>
               <div className="buy-btn-parent">
-
-              <button className="shop-btn">اشتري</button>
-              <h5 className="brand">Nike - نايكي</h5>
+                <h5 className="brand">Nike - نايكي</h5>
+                <button className="shop-btn">اشتري</button>
               </div>
               <Card.Text className="desc">{prod.desc}</Card.Text>
               <Rating />

@@ -1,24 +1,26 @@
 .topbar{
-padding: 0;
+    padding: 0;
     margin: 0;
     color: var(--main-light-text);
     background: var(--main-dark);
- position: fixed;   height: 50px;
- z-index: 9999;
+    position: fixed;
+    height: 50px;
+    z-index: 9999;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .shopping-cart{
-    border-left: 1px coral solid; 
-    border-right: 1px coral solid; 
-    border-radius: 17px; 
+        border-left: 1px coral solid;
+    border-right: 1px coral solid;
+    border-radius: 17px;
+    width: -moz-fit-content;
     width: fit-content;
-    height: fit-content;
-    margin: auto;
+    height: -moz-fit-content;
+     
     user-select: none;
     cursor: pointer;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+   
     position: relative;
     transition: all ease-in-out 0.3s;
 }
@@ -39,9 +41,16 @@ position: absolute;
 .shopping-cart .cart-icon{
     color: coral;
 }
- 
+ .logo-parent{
+         flex: 1;
+      display: flex;
+    justify-content: end;
+    align-items: center;
+
+ }
 .logo{
     color: rgb(255, 255, 255);
+    margin-right: 10px;
 }
 .search{
         display: flex;
@@ -111,16 +120,13 @@ background: var(--main-dark);
     border-radius: 10px;
 }
  
-
+/* 
 .topbar div{
       justify-content: end;
       align-items: center;
       margin: 0;
-}
+} */
 
-.logo-parent{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    flex: 1;
+.join-btns{
+ flex-grow: 1;
 }
