@@ -10,12 +10,12 @@ function Topbar() {
         <span className="count">3</span>
         <i class="bi bi-cart cart-icon" style={{ fontSize: 35 }}></i>
       </div>
-      <div className="links col-8 d-none .d-sm-block d-ms-none d-md-block">
-        <JoinBtns />
+      <div className="links col-md-7 d-none .d-sm-block d-ms-none d-md-block">
         <Search />
+        <JoinBtns />
       </div>
-     
-      <div className="col-sm-5 col-md-2 log-parent">
+
+      <div className=" col-md-2 log-parent">
         <h5 className=" text-center logo">سودا زون</h5>
       </div>
     </div>
