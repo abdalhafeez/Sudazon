@@ -1,0 +1,126 @@
+.topbar{
+padding: 0;
+    margin: 0;
+    color: var(--main-light-text);
+    background: var(--main-dark);
+ position: fixed;   height: 50px;
+ z-index: 9999;
+}
+
+.shopping-cart{
+    border-left: 1px coral solid; 
+    border-right: 1px coral solid; 
+    border-radius: 17px; 
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    transition: all ease-in-out 0.3s;
+}
+
+.shopping-cart:hover{
+      border-left: 2px coral solid; 
+    border-right: 2px coral solid; 
+    transform: scale(0.9)
+}
+.shopping-cart .count{
+position: absolute;
+    top: 12px;
+    left: 25px;
+    font-size: 17px;
+    font-weight: bold;
+    color: cyan;
+}
+.shopping-cart .cart-icon{
+    color: coral;
+}
+ 
+.logo{
+    color: rgb(255, 255, 255);
+}
+.search{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+
+}
+.search input{
+    border: 1px coral solid;
+    background: #ecf8f8;
+    border-radius: 5px;
+    padding: 3px;
+    width: 100%;
+    text-align: center;
+    color: rgb(70, 68, 67);
+    font-weight: bold;
+    outline-color: coral;
+ }
+.search input::placeholder{
+    
+}
+.search .drop{
+      padding: 3px;
+    position: absolute;
+    left: -2px;
+}
+
+.drop button{
+    padding: 3px;
+    border: none;
+    background: coral;
+    color: white;
+    font-weight: bold;
+}
+.drop a{
+    min-width: fit-content !important;
+     color: var(--main-light-text);
+
+
+}
+.drop a:hover{
+background: var(--main-dark);
+}
+
+.drop .list{
+    min-width: fit-content !important;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: none;
+    background: #2c3439;
+    box-shadow: 0 13px 34px -20px #ffffff;
+    border-radius: 10px;
+}
+.search .list::-webkit-scrollbar{
+    width: 10px;
+   
+}
+
+.search .list::-webkit-scrollbar-track{
+    background: var(--main-dark)
+}
+ 
+.search .list::-webkit-scrollbar-thumb{
+    background: coral;;
+    border-radius: 10px;
+}
+ 
+
+.topbar div{
+      justify-content: end;
+      align-items: center;
+      margin: 0;
+}
+
+.logo-parent{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex: 1;
+}

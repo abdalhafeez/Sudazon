@@ -1,0 +1,115 @@
+.slider{
+    height: 500px;
+    background: #0f4663;
+    padding: 0;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom: 20px;
+
+    
+}
+.slider .slide{
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:  all ease-in-out 1s;
+ }
+  .product-details{
+    background-color: #ffffff3d;
+    height: 75% !important;
+    width: 42% !important;
+    margin: auto;
+}
+
+.slider .img-container{
+    border-right: 2px coral solid;
+    height: 87%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container img{
+
+    height: 86%;
+    width: 93%;
+    margin: auto;
+    object-fit: cover;
+
+}
+.slide .product-details .brand{
+    color: coral;
+
+}
+.slide .product-details .desc{
+    color: white;
+}
+.card-align{
+        display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.shop-btn{
+     outline: none;
+    border-radius: 5px;
+    border: 2px coral solid;
+    background: #5e6468;
+    color: white;
+    font-weight: bold;
+    width: 100px;
+    padding: 5px;
+    align-self: end;
+    transition: all ease-in-out 0.3s;
+
+}
+.shop-btn:hover{
+    background: coral;
+    color: whitesmoke;
+}
+.slider .buy-btn-parent{
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+/* /////////////////////////////// */
+@media only screen and (max-width: 600px) {
+ .product-details{
+   
+    height: fit-content !important;
+    width: 100% !important;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.slider .img-container{
+    border-right: 2px coral solid;
+    height: 50%;
+ 
+}
+.slider .img-container{
+        height: 50%;
+    width: 100%;
+    margin: auto;
+    object-fit: cover;
+}
+
+.img-container img{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    object-fit: fill;
+
+}
+.slide{
+    flex-direction:row-reverse;
+}
+}
