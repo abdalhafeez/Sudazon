@@ -1,12 +1,10 @@
 const User = require("../models/User")
 const jwt = require("jsonwebtoken")
-const { check, validationResult } = require("express-validator")
+const { validationResult } = require("express-validator")
 const bcrypt = require("bcrypt")
-/*
-@desc: create new user 
-@route: /api/auth/singup
-@access: puplic
-*/
+/*  @desc: create new user 
+    @route: /api/auth/singup
+    @access: puplic               */
 const singupUser = async (req, res) => {
   const errors = validationResult(req)
   if (!errors.isEmpty()) {
@@ -35,7 +33,7 @@ const singupUser = async (req, res) => {
       }
     )
   } catch (error) {
-    console.log(error)
+    res.json({ errors: { msg: "Server Error" } })
   }
 }
 
@@ -45,16 +43,34 @@ const singupUser = async (req, res) => {
 @access: puplic
 */
 const longinUser = async (req, res) => {
+  const errors = validationResult(req)
+  if (!errors.isEmpty()) {
+    console.log(errors)
+    return res.status(400).json({ errors: errors.array() })
+  }
   const { email, password } = req.body
   try {
     const user = await User.findOne({ email })
-    console.log(user)
-    if (user && user.validatePassword(password)) {
+    const isMatched = await bcrypt.compare(password, user.password)
+    if (user && isMatched) {
+      const payload = { user: { id: user._id } }
+      jwt.sign(
+        payload,
+        "dfkdjfkdjskfjsdkjfksdjfksjfkjdkfjdkjfsdkjfkdjfkdsjf",
+        { expiresIn: 36000 },
+        (err, token) => {
+          if (err) {
+            console.log(err)
+            throw new Error(err)
+          }
+          res.status(200).json(token)
+        }
+      )
     } else {
       return res.status(401).json({ msg: "Invalid Credentails" })
     }
   } catch (error) {
-    console.log(error)
+    res.json({ errors: { msg: "Server Error" } })
   }
 }
 

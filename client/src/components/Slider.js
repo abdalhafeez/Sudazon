@@ -24,7 +24,7 @@ function Slider() {
   },[currentSlide])
  
   return (
-    <div className="slider row col-12 col-md-11">
+    <div className="slider row col-12 col-md-12">
       {prods.map((prod) => (
         <div
           className="slide row col-12 "
@@ -36,9 +36,9 @@ function Slider() {
               <Card.Title className="text-light">{prod.title} </Card.Title>
               <div className="buy-btn-parent">
                 <h5 className="brand">Nike - نايكي</h5>
-                <button className="shop-btn">اشتري</button>
               </div>
               <Card.Text className="desc">{prod.desc}</Card.Text>
+              <button className="shop-btn">اشتري</button>
               <Rating />
             </Card.Body>
           </Card>

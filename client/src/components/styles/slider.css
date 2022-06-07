@@ -23,10 +23,11 @@
     transition:  all ease-in-out 1s;
  }
   .product-details{
-    background-color: #ffffff3d;
+    background-color: var(--main-dark);
     height: 75% !important;
     width: 42% !important;
     margin: auto;
+    margin-bottom: 5x;
 }
 
 .slider .img-container{
@@ -60,8 +61,8 @@
 .shop-btn{
      outline: none;
     border-radius: 5px;
-    border: 2px coral solid;
-    background: #5e6468;
+    border: 2px cyan solid;
+    background: #487288;
     color: white;
     font-weight: bold;
     width: 100px;
@@ -71,8 +72,9 @@
 
 }
 .shop-btn:hover{
-    background: coral;
-    color: whitesmoke;
+    background: cyan;
+     color: var(--main-dark);
+;
 }
 .slider .buy-btn-parent{
         display: flex;

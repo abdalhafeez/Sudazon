@@ -1,4 +1,5 @@
 import JoinBtns from "./JoinBtns"
+import { Link } from "react-router-dom"
 import Search from "./Search"
 import "./styles/topbar.css"
 function Topbar() {
@@ -15,7 +16,9 @@ function Topbar() {
       </div>
       <div className=" col-md-4 col-sm-6 logo-parent">
         <JoinBtns />
-        <h3 className=" text-center logo">سودا زون</h3>
+        <Link to="/" className="link">
+          <h3 className=" text-center logo">سودازون</h3>
+        </Link>
       </div>
     </div>
   )
