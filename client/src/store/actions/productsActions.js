@@ -3,7 +3,7 @@ import {
   PRODUCT_LIST_REQUEST_FAILURET,
   PRODUCT_LIST_REQUEST_START,
   PRODUCT_LIST_REQUEST_SUCCESS,
-} from "../constants"
+} from "../constants/productConstants"
 export const fetchProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST_START })

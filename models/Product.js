@@ -22,10 +22,11 @@ const productSchema = mongoose.Schema(
       required: true,
       type: String,
     },
-    Image: {
+    mainImage: {
       required: true,
       type: String,
     },
+    images: [String],
     ratings: {
       type: Number,
       required: true,

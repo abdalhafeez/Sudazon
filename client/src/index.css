@@ -1,7 +1,8 @@
 :root{
   --main-light:#ecf8f8;
   --main-light-text:#cfcfcf;
-  --main-dark:#003049
+  --main-dark:#003049;
+  --main-coral: coral;
 }
 /* @import 'bootstrap/dist/css/bootstrap.css'; */
 

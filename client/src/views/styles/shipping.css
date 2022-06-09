@@ -7,13 +7,13 @@
     padding: 2px 10px;
     border: none;
     margin: 20px 0 0 0;
-    background: coral;
+    background: var(--main-coral);
     color: white;
     border-radius: 5px;
     font-weight: bold;
 }
 .shipping-screen label{
-    color: coral;
+    color: var(--main-coral);
     font-weight: bold;
 
     

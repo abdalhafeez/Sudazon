@@ -2,7 +2,7 @@ import {
   PRODUCT_LIST_REQUEST_FAILURET,
   PRODUCT_LIST_REQUEST_START,
   PRODUCT_LIST_REQUEST_SUCCESS,
-} from "../constants"
+} from "../constants/productConstants"
 export const productsReducer = (state = { products: [] }, action) => {
   const { type, payload } = action
   switch (type) {

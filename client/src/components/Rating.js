@@ -12,7 +12,11 @@ function Rating() {
         <i class="bi bi-star-fill" style={{ fontSize: 20, color: "coral" }}></i>
         <i class="bi bi-star-fill" style={{ fontSize: 20, color: "coral" }}></i>
       </div>
-      <button className="button btn-sm btn-info btn m-2">تعليق</button>
+      <div className="reviews">
+        <button className="button btn-sm btn-dark btn m-2">تعليق</button>
+        <span className=" text-muted small">5 علقوا عى هذا</span>
+        <span className="check-reviews">عرض المراجات</span>
+      </div>
     </div>
   )
 }
