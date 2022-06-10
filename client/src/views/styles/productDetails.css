@@ -60,16 +60,16 @@
     cursor: pointer;
     padding: 0 5px;
     margin: 5px 0;
-    border: 1px var(--main-dark) solid;
-    list-style: none;
-
+     list-style: none;
+    
 }
 .menu .show-numbers{
     transform: scale(1);
-     height: fit-content;
+    height: fit-content;
     overflow: hidden;
     padding: 5px;
 }
+
 .single-product-details .menu ul{
     list-style: none;
     margin: 5px;
@@ -77,9 +77,12 @@
      display: flex;
     justify-content: space-between;
 }
+.main-info{
+border: 1px var(--main-dark) solid;
+
+}
 .single-product-details .menu .main-info>li{
        border: 1px #a3bac1 solid;
-    width: 50%;
     padding: 3px 5px;
 }
 .single-product-details .menu select{

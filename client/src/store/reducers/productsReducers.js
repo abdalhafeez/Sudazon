@@ -3,7 +3,7 @@ import {
   PRODUCT_LIST_REQUEST_START,
   PRODUCT_LIST_REQUEST_SUCCESS,
 } from "../constants/productConstants"
-export const productsReducer = (state = { products: [] }, action) => {
+export const ListProductsReducer = (state = { products: [] }, action) => {
   const { type, payload } = action
   switch (type) {
     case PRODUCT_LIST_REQUEST_START:

@@ -22,21 +22,20 @@ const productSchema = mongoose.Schema(
       required: true,
       type: String,
     },
-    mainImage: {
-      required: true,
-      type: String,
-    },
     images: [String],
     ratings: {
       type: Number,
       required: true,
       default: 0,
     },
-    reviews: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
+    reviews: [
+      {
+        user: {
+          id: { type: mongoose.Schema.Types.ObjectId },
+          name: { type: String },
+        },
+      },
+    ],
   },
   { timestamps: true }
 )

@@ -5,7 +5,7 @@ function Search() {
     <div className="search mx-3">
       <div className="drop">
         <Dropdown>
-          <Dropdown.Toggle variant="warning" id="dropdown-basic">
+          <Dropdown.Toggle variant="" id="dropdown-basic">
             الكل
           </Dropdown.Toggle>
 

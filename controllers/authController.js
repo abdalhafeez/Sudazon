@@ -15,7 +15,7 @@ const singupUser = async (req, res) => {
   try {
     let user = await User.findOne({ email })
     if (user) return res.status(400).json({ msg: "User Already Registered" })
-    user = await new User({ name, email, password })
+    user = await new User({ name, email, password, isAdmin: true })
     const salt = await bcrypt.genSalt(10)
     user.password = await bcrypt.hash(password, salt)
     console.log(user)
@@ -25,7 +25,7 @@ const singupUser = async (req, res) => {
     }
     jwt.sign(
       payload,
-      "dfkdjfkdjskfjsdkjfksdjfksjfkjdkfjdkjfsdkjfkdjfkdsjf",
+      process.env.JWT_KEY,
       { expiresIn: 36000 },
       (err, token) => {
         if (err) throw new Error(err)

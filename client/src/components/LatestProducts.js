@@ -1,14 +1,17 @@
+import { useSelector, useDispatch } from "react-redux"
+import { fetchProducts } from "../store/actions/productsActions"
 import { useEffect } from "react"
-import axios from "axios"
 import "./styles/latestProducts.css"
 import { prods } from "../prods"
 function LatestProducts() {
+  const dispatch = useDispatch()
+  const productsRequest = useSelector((state) => state.rootReducer.productsList)
+  const { loading, errors, products } = productsRequest
+  console.log(products)
   useEffect(() => {
-    async function fetchData() {
-      const res = await axios.get("/products")
-      console.log(res)
-    }
-  })
+    dispatch(fetchProducts())
+  }, [dispatch])
+
   return (
     <div className="col-10 row latest-products">
       {prods.map((prod) => {

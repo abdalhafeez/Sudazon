@@ -11,14 +11,10 @@ module.exports = (req, res, next) => {
   }
   try {
     // verify the token
-    const verified = jwt.verify(
-      token,
-      "dfkdjfkdjskfjsdkjfksdjfksjfkjdkfjdkjfsdkjfkdjfkdsjf"
-    )
+    const verified = jwt.verify(token, process.env.JWT_KEY)
     // set the token to the req object
     req.user = verified.user
     // call the next function
-    console.log(req.user)
     next()
   } catch (error) {
     res.status(401).json({ errors: { msg: "Invalid token" } })

@@ -8,6 +8,7 @@
     z-index: 9999;
     align-items: center;
     justify-content: space-between;
+        border-bottom: 1px #ffffffb0 solid;
 }
 
 .shopping-cart{

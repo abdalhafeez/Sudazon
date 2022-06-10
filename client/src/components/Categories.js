@@ -13,7 +13,7 @@ function Categories() {
           <div className="title">
             <h4>نسائي</h4>
           </div>
-          <i class="bi bi-gender-female"></i>
+          <i className="bi bi-gender-female"></i>
         </div>
       </div>
       <div className="category m-auto col-3 ">
@@ -26,7 +26,7 @@ function Categories() {
           <div className="title">
             <h4>رجالي</h4>
           </div>
-          <i class="bi bi-gender-male"></i>
+          <i className="bi bi-gender-male"></i>
         </div>
       </div>
       <div className="category m-auto col-3 ">
@@ -39,7 +39,7 @@ function Categories() {
           <div className="title">
             <h6>اطفالي</h6>
           </div>
-          <i class="bi bi-person-hearts"></i>
+          <i className="bi bi-person-hearts"></i>
         </div>
       </div>
     </div>

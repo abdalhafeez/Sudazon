@@ -40,3 +40,7 @@ link{
   text-decoration: none;
   color: white !important;
 }
+.align-items{
+  display: flex;align-items: center;
+  justify-content: space-between;
+}
