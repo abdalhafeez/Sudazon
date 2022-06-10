@@ -9,7 +9,7 @@ module.exports = connectDB = () => {
         useNewUrlParser: true,
       }
     )
-    .then(() => console.log("Good"))
+    .then(() => console.log("DB Connected!"))
     .catch((e) => console.log(e))
 }
 console.log()

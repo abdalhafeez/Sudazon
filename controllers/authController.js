@@ -56,7 +56,7 @@ const longinUser = async (req, res) => {
       const payload = { user: { id: user._id } }
       jwt.sign(
         payload,
-        "dfkdjfkdjskfjsdkjfksdjfksjfkjdkfjdkjfsdkjfkdjfkdsjf",
+        process.env.JWT_KEY,
         { expiresIn: 36000 },
         (err, token) => {
           if (err) {

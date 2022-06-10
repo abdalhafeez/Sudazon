@@ -44,7 +44,17 @@ const deleteProduct = async (req, res) => {
 }
 // //
 const editProduct = async (req, res) => {
-  console.log("log in user")
+  try {
+    await Product.findByIdAndUpdate(
+      { _id: req.params.id },
+      { $set: req.body },
+      { new: true }
+    )
+    res.status(200).json({ msg: "تم تحديث بيانات المنتج بنجاح" })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ msg: "Server Error" })
+  }
 }
 // //
 const fetchtProductById = async (req, res) => {
