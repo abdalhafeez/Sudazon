@@ -5,10 +5,10 @@ export default (state = { cartItems: [] }, action) => {
   switch (type) {
     case ADD_TO_CART:
       const currentItem = payload
-      const alreadInCart = state.cartItems.find((item) => {
+      const InCart = state.cartItems.find((item) => {
         return item.productId === currentItem.id
       })
-      if (alreadInCart) {
+      if (InCart) {
         return {
           ...state,
           cartItems: state.cartItems.map((item) =>

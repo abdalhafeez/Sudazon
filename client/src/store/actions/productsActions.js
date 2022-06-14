@@ -1,4 +1,5 @@
 import axios from "axios"
+import { axiosInstance } from "../../axiosInstance"
 import {
   PRODUCT_LIST_REQUEST_FAILURET,
   PRODUCT_LIST_REQUEST_START,
@@ -7,7 +8,7 @@ import {
 export const fetchProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST_START })
-    const res = await axios.get("/products")
+    const res = await axiosInstance.get("/products")
     res.data &&
       dispatch({ type: PRODUCT_LIST_REQUEST_SUCCESS, payload: res.data })
   } catch (error) {

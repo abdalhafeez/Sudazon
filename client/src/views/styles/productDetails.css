@@ -77,10 +77,9 @@
      display: flex;
     justify-content: space-between;
 }
-.main-info{
+/* .main-info{
 border: 1px var(--main-dark) solid;
-
-}
+} */
 .single-product-details .menu .main-info>li{
        border: 1px #a3bac1 solid;
     padding: 3px 5px;

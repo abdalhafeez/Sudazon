@@ -21,7 +21,7 @@ function ProductDetails() {
         </div>
         <div className="small-images col-12 ">
           {images.map((image, index) => (
-            <div className="img-container">
+            <div className="img-container" key={index}>
               <img
                 src={image}
                 alt="product image"
@@ -48,7 +48,7 @@ function ProductDetails() {
           <ul className="main-info">
             <li>المتوفر</li>
 
-            <li> {product.inStock}</li>
+            <li className="p-auto"> {product.inStock}</li>
           </ul>
           <button onClick={() => setItemsNumBox(!itemsNumBox)} className="btn">
             اشتري
@@ -64,6 +64,7 @@ function ProductDetails() {
                 setQuantity(e.target.value)
               }}
             >
+              <option value="">العدد</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -72,7 +73,7 @@ function ProductDetails() {
             {/* <Link exact to="ship" className="link"> */}
           </ul>
 
-          {quantity > 1 && (
+          {quantity > 0 && (
             <ul className="actions">
               <li className="add-more">اضافة منتج أخر</li>
               <li className="purchase">اكمال الشراء</li>

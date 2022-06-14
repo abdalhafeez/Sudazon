@@ -6,7 +6,9 @@ import "bootstrap-icons/font/bootstrap-icons.css"
 import { Provider } from "react-redux"
 import App from "./App"
 import store from "./store/store"
-// console.log(store)
+import axios from "axios"
+
+axios.defaults.baseURL = "/api"
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
   <React.StrictMode>

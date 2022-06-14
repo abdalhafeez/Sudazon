@@ -5,17 +5,16 @@ import { Dropdown } from "react-bootstrap"
 function AdminMenu({ showMenu, setShowMenu }) {
   return (
     <div className="admin-menu">
-      <Dropdown.Toggle
-        variant="dark"
-        id="dropdown-basic"
-        onClick={(e) => {
-          setShowMenu(true)
-          e.stopPropagation()
-        }}
-      >
+<Dropdown.Toggle
+          variant="dark"
+          id="dropdown-basic"
+          onClick={(e) => {
+            setShowMenu(true)
+            e.stopPropagation()
+          }}
+        >
         الإدارة
-      </Dropdown.Toggle>
-
+</Dropdown.Toggle>
       <div className={`list shadow ${showMenu && "show-admin-menu"}`}>
         <li className="user">
           <h5 className="user-name">عبدالحفيظ اسماعيل</h5>
