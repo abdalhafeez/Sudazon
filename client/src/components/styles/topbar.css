@@ -24,26 +24,17 @@
 
 }
     
-.shopping-cart i{   
-     border-left: 2px coral solid;
-    border-right: 2px coral solid;
-    padding:      0 5px;}
-    .shopping-cart i:hover{
-    border-radius: 17px;
-    transition: all ease-in-out 0.3s;
-
-     
-}
 .shopping-cart .count{
-position: absolute;
+    position: absolute;
     top: 12px;
-    left: 32px;
+    left: 28px;
     font-size: 16px;
-     color: cyan;
+    color: hsl(180deg 100% 50%);
 }
 .shopping-cart .cart-icon{
     color: coral;
 }
+
  .logo-parent{
          flex: 1;
       display: flex;

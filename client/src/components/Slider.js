@@ -5,7 +5,7 @@ import Rating from "./Rating"
 import { prods } from "../prods"
 import { useRef, useState, useEffect } from "react"
 import BuyBtn from "./BuyBtn"
-function Slider() {
+function Slider({ products }) {
   const [sliderWidth, setSliderWidth] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
   const slideRef = useRef()
@@ -27,7 +27,7 @@ function Slider() {
 
   return (
     <div className="slider row col-12 col-md-12">
-      {prods.map((prod) => (
+      {prods?.map((prod) => (
         <div
           key={prod.id}
           className="slide row col-12 "
@@ -36,7 +36,7 @@ function Slider() {
         >
           <Card className="col-md-6 col-sm-12 product-details ">
             <Card.Body className="card-align ">
-              <Card.Title className="text-light">{prod.title} </Card.Title>
+              <Card.Title className="text-light">{prod.name} </Card.Title>
               <div className="buy-btn-parent">
                 <h5 className="brand">Nike - نايكي</h5>
               </div>
@@ -46,11 +46,11 @@ function Slider() {
             <BuyBtn />
           </Card>
           <Link
-            to="product-details"
+            to={`/product-details/${"62a1f91cd1b34094656b3da9"}`}
             className="col-md-6 col-sm-12 row img-container"
           >
             <div className="col-12 ">
-              <img src={prod.image} alt="image" />
+              <img src={prod.image} alt="product" />
             </div>
           </Link>
         </div>

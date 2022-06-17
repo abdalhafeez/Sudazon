@@ -2,8 +2,14 @@ import "./styles/productDetails.css"
 import { prods } from "../prods"
 import Rating from "../components/Rating"
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { fetchSingleProduct } from "../store/actions/productsActions"
 function ProductDetails() {
+  const history = useLocation()
+  const id = history.pathname.split("/")[2]
+  const dispatch = useDispatch()
+  console.log(history)
   const [itemsNumBox, setItemsNumBox] = useState(false)
   const [bigImage, setBigImage] = useState(0)
   const [quantity, setQuantity] = useState(0)
@@ -12,7 +18,9 @@ function ProductDetails() {
   for (let i = 0; i < 5; i++) {
     images.push(prods[i].image)
   }
-
+  // dispatch(fetchSingleProduct(id))
+  // const singleProduct = useSelector((state) => state.rootReducer)
+  // console.log(singleProduct)
   return (
     <div className="row col-md-11 col-sm-12 single-product-details ">
       <div className="images-container col-sm-12 col-md-7 m-auto mt-3 row">
@@ -76,7 +84,9 @@ function ProductDetails() {
           {quantity > 0 && (
             <ul className="actions">
               <li className="add-more">اضافة منتج أخر</li>
-              <li className="purchase">اكمال الشراء</li>
+              <Link className="link" to="/shoppingCart">
+                <li className="purchase">اكمال الشراء</li>
+              </Link>
             </ul>
           )}
         </div>
