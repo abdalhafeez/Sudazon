@@ -33,6 +33,7 @@ const orderSchema = mongoose.Schema(
       address: { type: String, required: true },
       postalCode: { type: Number, required: true },
       city: { type: String, required: true },
+      phone: { type: Number, required: true },
       country: { type: String, required: true, default: "Sudan" },
     },
     paymentMethod: { type: String, required: true },

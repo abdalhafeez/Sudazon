@@ -46,7 +46,7 @@ function Slider({ products }) {
             <BuyBtn />
           </Card>
           <Link
-            to={`/product-details/${"62a1f91cd1b34094656b3da9"}`}
+            to={`/product-details/${"62a3002f52c313b651d2abea"}`}
             className="col-md-6 col-sm-12 row img-container"
           >
             <div className="col-12 ">

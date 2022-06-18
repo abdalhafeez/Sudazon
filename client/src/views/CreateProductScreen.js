@@ -1,6 +1,5 @@
-import "../styles/createProduct.css"
+import "./styles/createProduct.css"
 import React, { useState } from "react"
-import axios from "axios"
 import { Form, Row, Col } from "react-bootstrap"
 function CreateProduct() {
   const [name, setName] = useState("")
@@ -8,9 +7,8 @@ function CreateProduct() {
   const [description, setDescription] = useState("")
   const [category, setCategory] = useState("")
   const [brand, setBrand] = useState("")
-  const [mainImage, setMainImage] = useState("")
   const [images, setImages] = useState([])
-  // const [ratings, setRatings] = useState("")
+  const [ratings, setRatings] = useState(0)
   // const [reviews, setReviews] = useState("")
   const createProductHandler = async (e) => {
     e.preventDefault()
@@ -20,8 +18,8 @@ function CreateProduct() {
       description,
       category,
       brand,
-      mainImage,
       images,
+      ratings,
       reviews: [],
     }
     try {

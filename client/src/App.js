@@ -1,11 +1,14 @@
 import { useState } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Topbar from "./components/Topbar"
-import CreateProduct from "./views/Admin/CreateProduct"
+import CreateProductScreen from "./views/CreateProductScreen"
 import CartScreen from "./views/CartScreen"
-import Home from "./views/Home"
-import ProductDetails from "./views/ProductDetails"
+import HomeScreen from "./views/HomeScreen"
+import ProductDetailsScreen from "./views/ProductDetailsScreen"
 import ShippingScreen from "./views/ShippingScreen"
+import PaymentMethodScreen from "./views/PaymentMethodScreen"
+import OrderSummary from "./views/OrderSummary"
+import LoginScreen from "./views/LoginScreen"
 function App() {
   const [showMenu, setShowMenu] = useState(false)
 
@@ -15,21 +18,22 @@ function App() {
       onClick={(e) => {
         e.stopPropagation()
         setShowMenu(false)
-        console.log(showMenu)
       }}
     >
       <Router>
         <Topbar showMenu={showMenu} setShowMenu={setShowMenu} />
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/ship" element={<ShippingScreen />} />
+          <Route exact path="/" element={<HomeScreen />} />
+          <Route exact path="/shipping" element={<ShippingScreen />} />
           <Route
-            exact
             path="/product-details/:id"
-            element={<ProductDetails />}
+            element={<ProductDetailsScreen />}
           />
-          <Route exact path="/admin/create" element={<CreateProduct />} />
-          <Route exact path="/shoppingCart" element={<CartScreen />} />
+          <Route path="/admin/create" element={<CreateProductScreen />} />
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/payment-method" element={<PaymentMethodScreen />} />
+          <Route path="/order-summary" element={<OrderSummary />} />
+          <Route path="/shopping-cart/:id" element={<CartScreen />} />
         </Routes>
       </Router>
     </div>

@@ -26,7 +26,7 @@ const singupUser = async (req, res) => {
     jwt.sign(
       payload,
       process.env.JWT_KEY,
-      { expiresIn: 36000 },
+      { expiresIn: 3600000 },
       (err, token) => {
         if (err) throw new Error(err)
         res.status(201).json(token)
@@ -37,11 +37,11 @@ const singupUser = async (req, res) => {
   }
 }
 
-/*
-@desc: log in user
-@route? /api/auth/login
-@access: puplic
-*/
+    /*
+    @desc: log in user
+    @route? /api/auth/login
+    @access: puplic
+    */
 const longinUser = async (req, res) => {
   const errors = validationResult(req)
   if (!errors.isEmpty()) {

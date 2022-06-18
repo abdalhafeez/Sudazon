@@ -1,16 +1,17 @@
 import "./styles/shipping.css"
 import { useState } from "react"
 import { Form } from "react-bootstrap"
+import CheckOutLine from "../components/CheckOutLine"
 function ShippingScreen() {
   const [address, setAddress] = useState("")
   const [city, setCity] = useState("")
   const [country, setCountry] = useState("")
   const [postalCode, setPostalCode] = useState("")
+  const [phone, setPhone] = useState("")
   const submitForm = (e) => {
     e.preventDefault()
-    const body = { address, city, country, postalCode }
+    const body = { address, city, phone, country, postalCode }
     console.log(body)
-
     setAddress("")
     setCity("")
     setCountry("")
@@ -18,7 +19,7 @@ function ShippingScreen() {
   }
   return (
     <div className=" row shipping-screen pt-5">
-      <div className="mt-3"></div>
+      <CheckOutLine step1 step2 />
       <Form
         autoCompete="off"
         className="col-md-7 col-sm-11 m-auto card p-3"

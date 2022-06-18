@@ -1,0 +1,33 @@
+.check-out-line{
+        background: linear-gradient(45deg, hsl(0deg 0% 100%), hsl(201deg 100% 14% / 47%));
+    padding: 0;
+    border: 1px hsl(201deg 74% 22%) solid;
+    border-radius: 15px;
+    max-width: 70vw
+}
+
+.check-out-line a:first-child{
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.check-out-line a:last-child{
+     border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.passed{
+        background: hsl(201deg 74% 22%);
+    color: hsl(0deg 0% 100%);
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+.not-passed{
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    color: hsl(201deg 74% 22%);;
+    cursor: not-allowed;
+}
+.check-out-line .passed:hover{
+    color: var(--main-coral);
+}

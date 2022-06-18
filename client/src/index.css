@@ -45,3 +45,6 @@ link{
   /* align-items: center; */
   justify-content: space-between;
 }
+.navColor{
+  color: var(--main-coral) !important;
+}

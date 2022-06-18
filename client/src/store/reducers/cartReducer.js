@@ -5,22 +5,21 @@ export default (state = { cartItems: [] }, action) => {
   switch (type) {
     case ADD_TO_CART:
       const currentItem = payload
-      const InCart = state.cartItems.find((item) => {
-        return item.productId === currentItem.id
-      })
-      if (InCart) {
+      const inCart = state.cartItems?.find(
+        (item) => item.productId === currentItem.productId
+      )
+      console.log(inCart)
+      if (inCart)
         return {
           ...state,
-          cartItems: state.cartItems.map((item) =>
-            item.productId === currentItem.id ? currentItem : item
-          ),
+          error: "this Item is already is cart",
         }
-      } else {
+      else
         return {
           ...state,
-          cartItems: [...state.cartItems, currentItem],
+          cartItems: [...state.cartItems, payload],
         }
-      }
+
     default:
       return state
   }

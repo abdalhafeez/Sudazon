@@ -4,10 +4,10 @@ import {
   ListProductsReducer,
   singleProductsReducer,
 } from "./reducers/productsReducers"
-const rootReducer = combineReducers({
+const reducer = combineReducers({
   productsList: ListProductsReducer,
   cart: cartReducer,
   singleProduct: singleProductsReducer,
 })
 
-export default rootReducer
+export default reducer

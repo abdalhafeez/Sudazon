@@ -1,5 +1,5 @@
 import "./styles/home.css"
-import Slider from '../components/Slider'
+import Slider from "../components/Slider"
 import Categories from "../components/Categories"
 import LatestProducts from "../components/LatestProducts"
 import Search from "../components/Search"
@@ -9,9 +9,9 @@ import { useEffect } from "react"
 
 function Home() {
   const dispatch = useDispatch()
-  const productsRequest = useSelector((state) => state.rootReducer.productsList)
+  const productsRequest = useSelector((state) => state.productsList)
   const { loading, errors, products } = productsRequest
-  console.log(products)
+  // console.log(products)
   useEffect(() => {
     dispatch(fetchProducts())
   }, [dispatch])

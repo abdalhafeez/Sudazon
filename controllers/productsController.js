@@ -18,12 +18,12 @@ const createProduct = async (req, res) => {
       images: req.body.images,
       ratings: req.body.ratings,
       reviews: req.body.reviews,
+      color: req.body.color,
+      size: req.body.size,
     })
     await newProduct.save()
-    console.log(newProduct)
     res.status(201).json(newProduct)
   } catch (error) {
-    console.error(error.message)
     res.status(500).json({ msg: "Server Error" })
   }
 }
@@ -32,8 +32,11 @@ const deleteProduct = async (req, res) => {
   try {
     const user = await User.findById(req.user.id)
     if (user.isAdmin) {
-      const productToRemove = await Product.findOneAndRemove({ _id: req.params.id })
-      if(!productToRemove) return res.status(400).json({msg:"تم حذف هذا المنتج لسفا"})
+      const productToRemove = await Product.findOneAndRemove({
+        _id: req.params.id,
+      })
+      if (!productToRemove)
+        return res.status(400).json({ msg: "تم حذف هذا المنتج لسفا" })
       res.status(200).json({ smg: "تم حذف المنتج بنجاح!" })
     } else {
       res.status(401).json({ msg: "Not authorized" })
@@ -60,10 +63,10 @@ const editProduct = async (req, res) => {
 const fetchtProductById = async (req, res) => {
   try {
     const product = await Product.findOne({ _id: req.params.id })
-    if (product) {
-      return res.status(200).json(product)
+    if (!product) {
+      res.status(404).json({ errors: { msg: "عذرا هذا المنتج غير متاح" } })
     }
-    res.status(404).json({ errors: { msg: "عذرا هذا المنتج غير متاح" } })
+    return res.status(200).json(product)
   } catch (error) {
     console.log(error)
     res.status(500).json({ msg: "Server Error" })
@@ -71,12 +74,16 @@ const fetchtProductById = async (req, res) => {
 }
 // fetch all product
 const fetchAllProducts = async (req, res) => {
+  let queryCategory = req.query.category
+  let products
   try {
-    const products = await Product.find()
-    console.log(products)
+    queryCategory
+      ? (products = await Product.find({ category: queryCategory }))
+      : (products = await Product.find())
     res.status(200).json(products)
   } catch (error) {
-    res.status(500).json({ errors: { msg: "Server Error" } })
+    console.log(error)
+    res.status(500).json({ msg: "Server Error" })
   }
 }
 module.exports = {
