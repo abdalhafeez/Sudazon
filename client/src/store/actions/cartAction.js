@@ -1,5 +1,9 @@
-import { axiosInstance } from "../../axiosInstance"
-import { ADD_TO_CART } from "../constants/cartContants"
+import { axiosInstance } from "../../utils/axiosInstance"
+import {
+  ADD_TO_CART,
+  CART_SAVE_PAYMENT_METHOD,
+  CART_SAVE_SHIPPING_ADDRESS,
+} from "../constants/cartContants"
 
 export const addToCartAction = (id, quantity) => async (dispatch, getState) => {
   const res = await axiosInstance.get(`/products/${id}`)
@@ -19,4 +23,21 @@ export const addToCartAction = (id, quantity) => async (dispatch, getState) => {
   } catch (error) {
     console.log(error)
   }
+}
+
+export const savePaymentMethod = (data) => async (dispatch, getState) => {
+  dispatch({
+    type: CART_SAVE_PAYMENT_METHOD,
+    payload: data,
+  })
+  localStorage.setItem("paymentMethod", JSON.stringify(data))
+}
+
+export const saveShippingAdress = (data) => async (dispatch, getState) => {
+  dispatch({
+    type: CART_SAVE_SHIPPING_ADDRESS,
+    payload: data,
+  })
+  console.log(getState().cart)
+  localStorage.setItem("shippingAdress", JSON.stringify(data))
 }

@@ -9,6 +9,7 @@ import ShippingScreen from "./views/ShippingScreen"
 import PaymentMethodScreen from "./views/PaymentMethodScreen"
 import OrderSummary from "./views/OrderSummary"
 import LoginScreen from "./views/LoginScreen"
+import RegisterScreen from "./views/RegisterScreen"
 function App() {
   const [showMenu, setShowMenu] = useState(false)
 
@@ -31,6 +32,7 @@ function App() {
           />
           <Route path="/admin/create" element={<CreateProductScreen />} />
           <Route path="/login" element={<LoginScreen />} />
+          <Route path="/register" element={<RegisterScreen />} />
           <Route path="/payment-method" element={<PaymentMethodScreen />} />
           <Route path="/order-summary" element={<OrderSummary />} />
           <Route path="/shopping-cart/:id" element={<CartScreen />} />

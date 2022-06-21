@@ -37,7 +37,7 @@ function Categories() {
         <div className="cat-container">
           {" "}
           <div className="title">
-            <h6>اطفالي</h6>
+            <h4>اطفالي</h4>
           </div>
           <i className="bi bi-person-hearts"></i>
         </div>

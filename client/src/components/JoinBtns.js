@@ -1,15 +1,16 @@
 import React from 'react'
-import {Button} from "react-bootstrap"
+import "./styles/joinBtns.css"
+import { Link } from "react-router-dom"
 function JoinBtns() {
   return (
     <div className="join-btns ">
       {" "}
-      <Button className=" mx-1 btn-sm " variant="light">
+      <Link to="/login" className=" mx-1 ">
         تسجيل الدخول
-      </Button>
-      <Button variant="outline-light" className=" mx-1 btn-sm">
+      </Link>
+      <Link to="/register" className=" mx-1">
         حساب جديد
-      </Button>
+      </Link>
     </div>
   )
 }

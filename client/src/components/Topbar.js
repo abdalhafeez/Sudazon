@@ -1,8 +1,8 @@
+import "./styles/topbar.css"
 import JoinBtns from "./JoinBtns"
 import { Link } from "react-router-dom"
 import Search from "./Search"
- 
-import "./styles/topbar.css"
+
 import AdminMenu from "./AdminMenu"
 function Topbar({ showMenu, setShowMenu }) {
   return (
@@ -17,7 +17,7 @@ function Topbar({ showMenu, setShowMenu }) {
         <Search />
       </div>
       <div className=" col-md-4 col-sm-6 logo-parent">
-        {/* <JoinBtns /> */}
+        <JoinBtns />
         <AdminMenu showMenu={showMenu} setShowMenu={setShowMenu} />
         <Link to="/" className="link">
           <h3 className=" text-center logo">سودازون</h3>

@@ -14,7 +14,8 @@ const singupUser = async (req, res) => {
   const { name, email, password } = req.body
   try {
     let user = await User.findOne({ email })
-    if (user) return res.status(400).json({ msg: "User Already Registered" })
+    if (user)
+      return res.status(400).json({ errors: [{ msg: "Invalid Credentials" }] })
     user = await new User({ name, email, password, isAdmin: true })
     const salt = await bcrypt.genSalt(10)
     user.password = await bcrypt.hash(password, salt)
@@ -33,11 +34,11 @@ const singupUser = async (req, res) => {
       }
     )
   } catch (error) {
-    res.json({ errors: { msg: "Server Error" } })
+    res.json({ errors: [{ msg: "Server Error " }] })
   }
 }
 
-    /*
+/*
     @desc: log in user
     @route? /api/auth/login
     @access: puplic
@@ -57,7 +58,7 @@ const longinUser = async (req, res) => {
       jwt.sign(
         payload,
         process.env.JWT_KEY,
-        { expiresIn: 36000 },
+        { expiresIn: 3600000 },
         (err, token) => {
           if (err) {
             console.log(err)
@@ -67,7 +68,7 @@ const longinUser = async (req, res) => {
         }
       )
     } else {
-      return res.status(401).json({ msg: "Invalid Credentails" })
+      return res.status(401).json({ errors: [{ msg: "Invalid Credentials" }] })
     }
   } catch (error) {
     res.json({ errors: { msg: "Server Error" } })

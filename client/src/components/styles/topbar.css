@@ -38,18 +38,18 @@
  .logo-parent{
          flex: 1;
       display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 
  }
 .logo{
-    color: cyan;
+    color: hsl(16deg 100% 66%);
     margin-right: 10px;
+    font-weight: bold;
 }
 .logo-parent a{
   text-decoration: none;
-  color: white !important;
-}
+ }
 .search{
         display: flex;
     align-items: center;
@@ -121,12 +121,7 @@ background: var(--main-dark);
     border-radius: 10px;
 }
  
-/* 
-.topbar div{
-      justify-content: end;
-      align-items: center;
-      margin: 0;
-} */
+
 
 .join-btns{
  flex-grow: 1;

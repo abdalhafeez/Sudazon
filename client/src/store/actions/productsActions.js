@@ -1,4 +1,4 @@
-import { axiosInstance } from "../../axiosInstance"
+import { axiosInstance } from "../../utils/axiosInstance"
 import {
   PRODUCT_LIST_REQUEST_FAILURE,
   PRODUCT_LIST_REQUEST_START,

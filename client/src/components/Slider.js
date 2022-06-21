@@ -35,8 +35,8 @@ function Slider({ products }) {
           style={{ transform: `translateX(${sliderWidth * currentSlide}px)` }}
         >
           <Card className="col-md-6 col-sm-12 product-details ">
-            <Card.Body className="card-align ">
-              <Card.Title className="text-light">{prod.name} </Card.Title>
+            <Card.Body className="card-align">
+              <Card.Title className="text-dark">{prod.name} </Card.Title>
               <div className="buy-btn-parent">
                 <h5 className="brand">Nike - نايكي</h5>
               </div>

@@ -18,11 +18,11 @@ import { prods } from "../prods"
    console.log(cart)
    return (
      <div className="row m-0 cart-screen ">
-       <div className="col-md-11 pt-5  m-auto mt-5 row">
+       <div className="col-md-10 col-sm-12 pt-5  m-auto mt-5 row">
          <div className="title-parent">
-           <h2 className="mb-3 text-center title"> سلة مشترياتك</h2>
+           <h2 className="mb-5 text-center title"> سلة مشترياتك</h2>
          </div>
-         {false ? (
+         {cartItems?.length === 0 ? (
            <div className="no-products-msg shadow-sm">
              <h3 className="text-center mt-5"> لم تقوم باضافة اي منتجات </h3>
              <Link to="/" className=" btn btn-lg btn-info mt-5">
@@ -32,29 +32,34 @@ import { prods } from "../prods"
          ) : (
            <>
              <div className="cart-info col-md-3 m-auto p-3">
-               <h6>
-                 {" "}
-                 لديك{" "}
-                 <span className="text-white rounded bg-dark">
-                   (
-                   {cartItems.reduce((acc, current) => {
-                     return Number(current.quantity) + acc
-                   }, 0)}
-                   )
-                 </span>{" "}
-                 منتج في سلة مشترياتك
-               </h6>
-               <h6 className="m-3 text-dark">
-                 {" "}
-                 {/* (
-                 {cartItems.reduce((acc, current) => {
-                   return Number(current.quantity) + acc
-                 }, 0) * Number(current.price)} */}
-                 )= اجمالي السعر
-               </h6>
-               <button className="check-out-btn btn btn-sm btn-success">
-                 دفع الفاتورة
-               </button>
+               <div className="price-info">
+                 <ul>
+                   <li>عدد مشترياتك : </li>
+                   <li>
+                     (
+                     {cartItems.reduce((acc, current) => {
+                       return Number(current.quantity) + acc
+                     }, 0)}
+                     )
+                   </li>
+                 </ul>
+                 <ul>
+                   <li> اجمالي السعر : </li>
+                   <li>
+                     {cartItems.reduce(
+                       (acc, current) => acc + Number(current.quantity),
+                       0
+                     ) *
+                       cartItems.reduce(
+                         (acc, current) => acc + Number(current.price),
+                         0
+                       )}
+                   </li>
+                 </ul>
+                 <button className="check-out-btn btn btn-sm  mt-5 mb-2">
+                   دفع الفاتورة
+                 </button>
+               </div>
              </div>
              <div className=" col-md-9 product-in-cart m-auto shadow-sm">
                {cartItems?.map((item) => (
@@ -64,7 +69,9 @@ import { prods } from "../prods"
                      alt="product"
                      className="product-img"
                    />
-                   <h6 className="product-name text-dark">{item.name}</h6>
+                   <Link to={`/product-details/${item._id}`} className>
+                     <h6 className="product-name text-dark">{item.name}</h6>
+                   </Link>
                    <div className="price text-primary">{`جنيه ${item.price}`}</div>
                    <div className="amount">
                      <i

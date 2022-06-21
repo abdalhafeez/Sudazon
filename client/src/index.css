@@ -1,8 +1,10 @@
 :root{
-  --main-light:#ecf8f8;
+  --main-light:hsl(16deg 100% 98%);
+  --main-lighter:hsl(16deg 100% 99%);
   --main-light-text:#cfcfcf;
   --main-dark:#003049;
   --main-coral: coral;
+  --main-shadow: 0 0 38px -34px hsl(0deg 0% 0%);
 }
 /* @import 'bootstrap/dist/css/bootstrap.css'; */
 

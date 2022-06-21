@@ -20,9 +20,9 @@ function ProductDetails() {
   }
   useEffect(() => {
     dispatch(fetchSingleProduct(id))
-  }, [dispatch])
+  }, [dispatch, id])
   const singleProduct = useSelector((state) => state.singleProduct)
-  const { loading, errors, product } = singleProduct
+  const { /*loading, errors, */ product } = singleProduct
 
   const handleAddOrder = () => {
     dispatch(addToCartAction(product._id, quantity))
@@ -33,14 +33,14 @@ function ProductDetails() {
       <h1>تفاصيل المنتج</h1>
       <div className="images-container col-sm-12 col-md-6 m-auto mt-3 row">
         <div className="big-image col-12  shadow-sm">
-          <img src={images[bigImage]} alt="product image" />
+          <img src={images[bigImage]} alt="product" />
         </div>
         <div className="small-images col-12 ">
           {images.map((image, index) => (
             <div className="img-container" key={index}>
               <img
                 src={image}
-                alt="product image"
+                alt="product"
                 onClick={(e) => setBigImage(index)}
               />
             </div>
@@ -112,6 +112,7 @@ function ProductDetails() {
                 >
                   <li className="purchase">اكمال الشراء</li>
                 </Link>
+                <Link to="/shipping">address</Link>
               </ul>
             )}
           </div>
