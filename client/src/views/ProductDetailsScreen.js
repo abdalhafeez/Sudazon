@@ -9,25 +9,23 @@ import { addToCartAction } from "../store/actions/cartAction"
 function ProductDetails() {
   const history = useLocation()
   const id = history.pathname.split("/")[2]
-  const dispatch = useDispatch()
-  const [itemsNumBox, setItemsNumBox] = useState(false)
-  const [bigImage, setBigImage] = useState(0)
-  const [quantity, setQuantity] = useState(1)
-  const tempProduct = prods[0]
-  let images = []
+  const dispatch = useDispatch();
+  const [bigImage, setBigImage] = useState(0);
+  const [quantity, setQuantity] = useState(0);
+  const tempProduct = prods[0];
+  let images = [];
   for (let i = 0; i < 5; i++) {
-    images.push(prods[i].image)
+    images.push(prods[i].image);
   }
   useEffect(() => {
-    dispatch(fetchSingleProduct(id))
-  }, [dispatch, id])
-  const singleProduct = useSelector((state) => state.singleProduct)
-  const { /*loading, errors, */ product } = singleProduct
-
+    dispatch(fetchSingleProduct(id));
+  }, [dispatch, id]);
+  const singleProduct = useSelector((state) => state.singleProduct);
+  const { /*loading, errors, */ product } = singleProduct;
   const handleAddOrder = () => {
-    dispatch(addToCartAction(product._id, quantity))
-    // window.location.replace(`/shoppingCart/${product._id}?qant=${quantity}`)
-  }
+    // dispatch(addToCartAction(product._id, quantity));
+    window.location.replace(`/cart/${product._id}?qant=${quantity}`);
+  };
   return (
     <div className="row col-md-11 col-sm-12 single-product-details ">
       <h1>تفاصيل المنتج</h1>
@@ -56,70 +54,48 @@ function ProductDetails() {
           <p className="desc">{tempProduct.desc}</p>
         </div>
         <div className="col col-md-5 col-12 mx-auto shadow-sm menu row">
-          <div className="col-5 col-md-12">
-            <ul className="main-info">
+          <div className="col-5 col-md-12 main-info">
+            <ul className="">
               <li>السعر </li>
 
               <li> {`ج${tempProduct.price}`}</li>
             </ul>
-            <ul className="main-info">
+            <ul className="">
               <li>المتوفر</li>
 
               <li className="p-auto"> {tempProduct.inStock}</li>
             </ul>
           </div>
           <div className="col-5 col-md-12">
-            <button
-              onClick={() => setItemsNumBox(!itemsNumBox)}
-              className="btn"
+            <ul
+              className={`number-of-items ${/*itemsNumBox &&*/ "show-numbers"}`}
             >
-              اشتري
-            </button>
-
-            <ul className={`number-of-items ${itemsNumBox && "show-numbers"}`}>
               <span className="mb-2">عايز تشتري كم؟</span>
               <select
                 name="quantity"
                 // defaultValue="1"
                 id="quantity"
                 onChange={(e) => {
-                  setQuantity(e.target.value)
-                  handleAddOrder()
+                  setQuantity(e.target.value);
                 }}
               >
-                <option value="1" onClick={handleAddOrder}>
-                  1
-                </option>
-                <option value="2" onClick={handleAddOrder}>
-                  2
-                </option>
-                <option value="3" onClick={handleAddOrder}>
-                  3
-                </option>
-                <option value="4" onClick={handleAddOrder}>
-                  4
-                </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
               </select>
-              {/* <Link exact to="ship" className="link"> */}
+              <button
+                onClick={() => handleAddOrder(product._id, quantity)}
+                className="cu-btn-cyan px-3 mt-3"
+              >
+                اشتري
+              </button>{" "}
             </ul>
-
-            {quantity > 0 && (
-              <ul className="actions">
-                <li className="add-more">اضافة منتج أخر</li>
-                <Link
-                  to={`/shopping-cart/${product._id}?quantity=${quantity}`}
-                  className="link"
-                >
-                  <li className="purchase">اكمال الشراء</li>
-                </Link>
-                <Link to="/shipping">address</Link>
-              </ul>
-            )}
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default ProductDetails

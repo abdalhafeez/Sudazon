@@ -5,8 +5,7 @@ function Categories() {
     <div className="categories row col-md-7 col-sm-12 ">
       <div className="category m-auto col-3 ">
         <div className="overlay">
-          <h6>اعرض كل الاحذية النسائية</h6>
-          <p>تجد عندنا الجديد و الموضة</p>
+          <p>اعرض كل الاحذية النسائية</p>
         </div>
 
         <div className="cat-container">
@@ -18,8 +17,7 @@ function Categories() {
       </div>
       <div className="category m-auto col-3 ">
         <div className="overlay">
-          <h6>اعرض كل الاحذية النسائية</h6>
-          <p>تجد عندنا الجديد و الموضة</p>
+          <p>اعرض كل الاحذية النسائية</p>
         </div>
         <div className="cat-container">
           {" "}
@@ -31,8 +29,7 @@ function Categories() {
       </div>
       <div className="category m-auto col-3 ">
         <div className="overlay">
-          <h6>اعرض كل الاحذية النسائية</h6>
-          <p>تجد عندنا الجديد و الموضة</p>
+          <p>اعرض كل الاحذية النسائية</p>
         </div>
         <div className="cat-container">
           {" "}
@@ -43,7 +40,7 @@ function Categories() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Categories

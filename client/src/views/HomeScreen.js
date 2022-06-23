@@ -18,13 +18,13 @@ function Home() {
   return (
     <div className="home row pb-3">
       <div className="col-12 d-none .d-sm-block "></div>
-      <Search />
+      {/* <Search /> */}
       <Slider products={products} />
       <Categories />
-      <div className="latest-products-title col-9 mt-5 row">أخر الموضات</div>
+      <div className="latest-products-title col-9 m2-5 row">أخر الموضات</div>
       <LatestProducts products={products} />
     </div>
-  )
+  );
 }
 
 export default Home

@@ -26,7 +26,7 @@ function Slider({ products }) {
   }, [currentSlide])
 
   return (
-    <div className="slider row col-12 col-md-12">
+    <div className="slider row col-sm-12 col-md-11">
       {prods?.map((prod) => (
         <div
           key={prod.id}
@@ -56,7 +56,7 @@ function Slider({ products }) {
         </div>
       ))}
     </div>
-  )
+  );
 }
 
 export default Slider

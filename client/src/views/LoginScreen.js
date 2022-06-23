@@ -1,23 +1,37 @@
-import "./styles/login.css"
-import { useState, useContext } from "react"
-import { Link } from "react-router-dom"
-import CheckOutLine from "../components/CheckOutLine"
+import "./styles/login.css";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import CheckOutLine from "../components/CheckOutLine";
+import { loginUser } from "../store/actions/userActions";
 const LoginScreen = () => {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [errors, setError] = useState([])
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const userInfo = useSelector((state) => state.userInfo);
+  const { loading, error, token, user } = userInfo;
+  const navigate = useNavigate();
+  user && navigate("/shipping");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(loginUser({ password, email }));
+    if (error) return;
+    window.location.replace("/shipping");
+  };
   return (
-    <div className=" login row mb-5">
+    <div className="login row mb-5">
       <CheckOutLine step1 />
-      <form className=" col-10 col-md-5">
-        <h3 className="text-center form-color ">Log In</h3>
+      <form
+        onSubmit={handleSubmit}
+        className=" p-3  col-10 col-md-7 shadow-sm mt-5"
+      >
+        <h3 className="text-center form-color ">تسجيل الدخول </h3>
 
-        <div className="form-group">
-          <label className="form-color">email</label>
+        <div className="f-grp">
+          <label className="form-color">الإيميل</label>
 
           <input
-            className="form-control my-3"
+            className="style-input my-3"
             name="email"
             type="email"
             required
@@ -25,29 +39,30 @@ const LoginScreen = () => {
           />
         </div>
 
-        <div className="form-group">
-          <label className="form-color">password</label>{" "}
+        <div className="f-grp">
+          <label className="form-color">كلمة المرور</label>{" "}
           <input
             name="password"
-            className="form-control mb-3"
+            className="style-input mb-3"
             type="password"
             required
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
-        <div className="auth-actions-ui">
-          <button type="button" className="btn  btn-success btn-sm" mt={3}>
-            {" "}
-            Submit{" "}
-          </button>
-          <Link to="/register" className="link text-primary ">
-            Register
-          </Link>
+        <div className="auth-actions-ui align-items mt-5">
+          <input value="تسجيل" type="submit" className="cu-btn-cyan" />
+
+          <div>
+            <small>زبون جديد؟</small>
+            <Link to="/register" className="cu-btn-dark-outline m-2">
+              حساب جديد
+            </Link>
+          </div>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default LoginScreen
+export default LoginScreen;

@@ -4,27 +4,45 @@ import { Link } from "react-router-dom"
 import Search from "./Search"
 
 import AdminMenu from "./AdminMenu"
+import { useSelector, useDispatch } from "react-redux";
 function Topbar({ showMenu, setShowMenu }) {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.userInfo.user);
+  console.log(user);
   return (
-    <div className="topbar row col-12">
-      <div className="shopping-cart col-sm-7 col-md-2 text-center me-2">
-        {" "}
-        {/* <span>سلة المبيعات</span> */}
-        <span className="count">3</span>
-        <i className="bi bi-cart cart-icon" style={{ fontSize: 35 }}></i>
+    <div className="topbar  col-12">
+      <Link to={`/cart/${user?._id}`} className="link">
+        <div className="shopping-cart text-center mx-3">
+          {" "}
+          {/* <span>سلة المبيعات</span> */}
+          <span className="count">3</span>
+          <i className="bi bi-cart cart-icon" style={{ fontSize: 35 }}></i>
+        </div>{" "}
+      </Link>
+      <div className="ms-auto">
+        {user ? (
+          user?.isAdmin ? (
+            <AdminMenu
+              user={user}
+              dispatch={dispatch}
+              showMenu={showMenu}
+              setShowMenu={setShowMenu}
+            />
+          ) : (
+            ""
+          )
+        ) : (
+          <JoinBtns />
+        )}
       </div>
-      <div className="links col-6 d-none .d-sm-block d-ms-none d-md-block">
+      <div className="search-parent d-none d-sm-block d-ms-none d-md-block">
         <Search />
       </div>
-      <div className=" col-md-4 col-sm-6 logo-parent">
-        <JoinBtns />
-        <AdminMenu showMenu={showMenu} setShowMenu={setShowMenu} />
-        <Link to="/" className="link">
-          <h3 className=" text-center logo">سودازون</h3>
-        </Link>
-      </div>
+      <Link to="/" className="link text-center logo">
+        سودازون
+      </Link>
     </div>
-  )
+  );
 }
 
 export default Topbar

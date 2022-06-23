@@ -3,15 +3,20 @@ import { Form } from "react-bootstrap"
 import CheckOutLine from "../components/CheckOutLine"
 import { useState } from "react"
 import { savePaymentMethod } from "../store/actions/cartAction"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 function PaymentMethodScreen() {
-  const dispatch = useDispatch()
-  const [paymentMethod, setPaymentMethod] = useState("")
+  const userInfo = useSelector((state) => state.userInfo);
+  const { user } = userInfo;
+  const navigate = useNavigate();
+  !user && navigate("/login");
+  const dispatch = useDispatch();
+  const [paymentMethod, setPaymentMethod] = useState("");
   const selectPaymentHandler = (e) => {
-    e.preventDefault()
-    dispatch(savePaymentMethod(paymentMethod))
-    paymentMethod && window.location.replace("/order-summary")
-  }
+    e.preventDefault();
+    dispatch(savePaymentMethod(paymentMethod));
+    paymentMethod && window.location.replace("/order-summary");
+  };
   return (
     <div className="payment row m-auto col-10 pt-5">
       <CheckOutLine step1 step2 step3 />
@@ -43,7 +48,7 @@ function PaymentMethodScreen() {
         )}
       </Form>
     </div>
-  )
+  );
 }
 
 export default PaymentMethodScreen

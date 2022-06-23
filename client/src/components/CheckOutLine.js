@@ -7,9 +7,8 @@ function CheckOutLine({ step1, step2, step3, step4 }) {
   const idRed = useRef()
   const pathname = history.pathname.split("/").pop()
   useEffect(() => {
-    setNavColor(idRed.current.id === pathname)
-  }, [])
-  console.log(navColor)
+    setNavColor(idRed.current.id === pathname);
+  }, [pathname]);
   return (
     <nav className="row col-11 m-auto my-3 check-out-line">
       {step1 ? (

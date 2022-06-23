@@ -1,9 +1,12 @@
 :root{
-  --main-light:hsl(16deg 100% 98%);
-  --main-lighter:hsl(16deg 100% 99%);
+  --main-light:hsl(201deg 100% 99%);
+  --main-lighter:hsl(16deg 100% 100%);
   --main-light-text:#cfcfcf;
   --main-dark:#003049;
+  --main-light-dark:hsl(201deg 31% 41%);
   --main-coral: coral;
+  --main-shadow-lg:-12px 15px 38px -34px hsl(0deg 0% 0%);
+  --main-cyan: cyan;
   --main-shadow: 0 0 38px -34px hsl(0deg 0% 0%);
 }
 /* @import 'bootstrap/dist/css/bootstrap.css'; */
@@ -17,12 +20,13 @@ font-family: 'Tajawal', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
+
 *{
   padding: 0;
   margin: 0;
 
 }
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@200;300&family=Tajawal:wght@200;300;500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@200;300&family=Tajawal:wght@200;300;500&display=swap'); */
 
 .App{
   padding: 0;
@@ -49,4 +53,58 @@ link{
 }
 .navColor{
   color: var(--main-coral) !important;
+}
+
+.grow{
+      flex-grow: 1;
+}
+/* style classes that has to do with colors */
+.tx-lt{
+  color: #27495c;
+}
+.tx-lt-dark{
+  color: #5c7b8d;
+}
+
+.tx-coral{
+   color: coral;
+}
+.bg-coral{
+  background: coral;
+}
+.tx-white{
+  color: white;
+} 
+.tx-b{
+  font-weight: bold;
+}
+.tx-title{
+  text-decoration: none;
+  font-size: 25px;
+      text-align: center;
+    color: hsl(201deg 15% 55%);
+    margin: 10px;
+}
+
+/* style that has to do with forms */
+
+.style-input{
+    background: hsl(0deg 0% 100%);
+    border: none;
+    border: 1px hsl(201deg 8% 80%) solid;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    margin: 5px 0;
+}
+.f-grp{
+      margin: 5px 0;
+    padding: 3px;
+    display: block;
+}
+.icon-img-rounded{
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
 }

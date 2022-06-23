@@ -13,23 +13,17 @@ const paymentMethodFromLocalStorage = localStorage.getItem("paymentMethod")
   ? JSON.parse(localStorage.getItem("paymentMethod"))
   : ""
 const tokenFromLocalStorage = localStorage.getItem("token")
-  ? localStorage.getItem("token")
-  : ""
+ 
 const initialState = {
   cart: {
     cartItems: cartItemsFromLocalStorage,
     shippingAddress: shippingAddressFromLocalStorage,
     paymentMethod: paymentMethodFromLocalStorage,
-    userInfo: {
-      token: tokenFromLocalStorage,
-    },
   },
-}
-// const reducer = combineReducers({
-//   productsList: ListProductsReducer,
-//   cart: cartReducer,
-//   singleProduct: singleProductsReducer,
-// })
+  userInfo: {
+    token: tokenFromLocalStorage,
+  },
+};
 const store = createStore(
   reducer,
   initialState,

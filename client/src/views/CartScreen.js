@@ -7,15 +7,16 @@ import { prods } from "../prods"
  import { addToCartAction } from "../store/actions/cartAction"
 
  function CartScreen() {
-   const history = useLocation()
-   const id = history.pathname.split("/")[2]
-   const dispatch = useDispatch()
+   const history = useLocation();
+   const id = history.pathname.split("/")[2];
+   const qty = Number(history.search.split("=")[1]);
+   console.log(qty);
+   const dispatch = useDispatch();
    useEffect(() => {
-     dispatch(addToCartAction(id, 5))
-   }, [dispatch])
-   const cart = useSelector((state) => state.cart)
-   const { cartItems } = cart
-   console.log(cart)
+     dispatch(addToCartAction(id, qty));
+   }, [dispatch]);
+   const cart = useSelector((state) => state.cart);
+   const { cartItems } = cart;
    return (
      <div className="row m-0 cart-screen ">
        <div className="col-md-10 col-sm-12 pt-5  m-auto mt-5 row">
@@ -38,7 +39,7 @@ import { prods } from "../prods"
                    <li>
                      (
                      {cartItems.reduce((acc, current) => {
-                       return Number(current.quantity) + acc
+                       return Number(current.quantity) + acc;
                      }, 0)}
                      )
                    </li>
@@ -75,6 +76,7 @@ import { prods } from "../prods"
                    <div className="price text-primary">{`جنيه ${item.price}`}</div>
                    <div className="amount">
                      <i
+                       onClick={() => dispatch(addToCartAction(id, qty + 1))}
                        className="bi bi-file-plus amount-control-icons"
                        style={{ fontSize: 30 }}
                      ></i>
@@ -94,7 +96,7 @@ import { prods } from "../prods"
          )}
        </div>
      </div>
-   )
+   );
  }
 
 export default CartScreen

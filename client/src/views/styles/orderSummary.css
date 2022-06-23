@@ -1,0 +1,18 @@
+.order-summary .right> div{
+    /* background-color: hsl(204deg 100% 98%); */
+    padding: 7px;
+    border-bottom: 1px rgb(155, 160, 165) solid;
+ }
+.summary{
+    height: fit-content;
+    padding: 10px;
+    border-radius: 7px;
+}
+.summary ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px var(--main-light-text) solid;
+    padding: 5px;
+}

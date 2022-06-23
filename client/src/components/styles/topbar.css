@@ -1,22 +1,28 @@
 .topbar{
-    padding: 0;
+padding: 0;
     margin: 0;
     color: var(--main-light-text);
-    background: var(--main-dark);
+    background: var(--main-light-dark);
     position: fixed;
     height: 50px;
     z-index: 9999;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
-        border-bottom: 1px #ffffffb0 solid;
+     justify-content: space-between;
+    border-bottom: 1px hsl(0deg 0% 100% / 69%) solid;
 }
-
+.topbar a{
+    text-decoration: none;
+    user-select: none;
+}
+.topbar a:hover{
+    color: var(--main-coral);
+}
 .shopping-cart{
-
+    color: var(--main-coral);
     width: -moz-fit-content;
     width: fit-content;
     height: -moz-fit-content;
-     
     user-select: none;
     cursor: pointer;
      position: relative;
@@ -27,28 +33,25 @@
 .shopping-cart .count{
     position: absolute;
     top: 12px;
-    left: 28px;
-    font-size: 16px;
-    color: hsl(180deg 100% 50%);
-}
-.shopping-cart .cart-icon{
-    color: coral;
-}
-
- .logo-parent{
-         flex: 1;
-      display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
- }
-.logo{
-    color: hsl(16deg 100% 66%);
-    margin-right: 10px;
+    left: 15px;
+    font-size: 17px;
+    color: hsl(137deg 100% 52%);
     font-weight: bold;
 }
-.logo-parent a{
-  text-decoration: none;
+
+.logo{
+       color: var(--main-cyan);
+    margin: 0 10px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 25px;
+}
+.topbar .logo:hover{
+       color: rgb(0, 204, 204);
+
+}
+ .search-parent{
+    flex-grow: 1;
  }
 .search{
         display: flex;
@@ -58,21 +61,20 @@
     position: relative;
 
 }
+
 .search input{
-      border: 1px coral solid;
-    background: #0f4663;
+    /* border: 1px hsl(16deg 100% 66%) solid; */
+    background: hsl(0deg 0% 100%);
     border-radius: 5px;
     padding: 3px;
     width: 100%;
     text-align: center;
-    color: rgb(255 255 255);
-    /* font-weight: bold;
-     */
-     word-spacing: 4px;
-    outline: none;
- }
+    color: hsl(201deg 73% 22%);
+    /* font-weight: bold; */
+    word-spacing: 4px;
+    outline: none;}
 .search input::placeholder{
-    color: rgb(168, 185, 185)
+    color: rgb(70, 70, 70)
     
 }
 .search .drop{
@@ -84,9 +86,8 @@
 .drop button{
     padding: 3px;
     border: none;
-    background: coral;
-    color: white;
-    font-weight: bold;
+    background: var(--main-coral);
+    color: hsl(0deg 0% 100%);
 }
 .drop a{
     min-width: fit-content !important;

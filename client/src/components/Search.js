@@ -25,7 +25,7 @@ function Search() {
       </div>
       <input type="search" placeholder="ابحث عن حذائك . . ." />
     </div>
-  )
+  );
 }
 
 export default Search

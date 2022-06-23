@@ -36,16 +36,13 @@
 }
 
 .latest-products-title{
-       font-size: 30px;
+         font-size: 30px;
     font-weight: bold;
-    border: 5px hsl(180deg 100% 50%) solid;
-    display: flex;
-    justify-content: center;
-    background: hsl(0deg 0% 100%);
-    color: hsl(201deg 74% 22%);
-    border-bottom: none;
-    border-top: none;
-    padding: 5px;
+    border-right: 5px hsl(180deg 100% 50%) solid;
+    margin: 10px;
+    color: hsl(16deg 100% 66%);
+    padding: 5px 10px;
+   
 }
 .overlay .shop{
     list-style: none;

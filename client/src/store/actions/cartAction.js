@@ -11,13 +11,13 @@ export const addToCartAction = (id, quantity) => async (dispatch, getState) => {
     dispatch({
       type: ADD_TO_CART,
       payload: {
-        productId: res.data._id,
         name: res.data.name,
+        productId: res.data._id,
         price: res.data.price,
-        image: res.data?.image > 0 && res.data?.image[0],
         quantity,
+        image: res.data?.image > 0 && res.data?.image[0],
       },
-    })
+    });
     console.log(getState())
     localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems))
   } catch (error) {

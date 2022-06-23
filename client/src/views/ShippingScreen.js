@@ -3,24 +3,28 @@ import { useState } from "react"
 import { Form } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import CheckOutLine from "../components/CheckOutLine"
-import { useLocation } from "react-router-dom"
-import { saveShippingAdress } from "../store/actions/cartAction"
+import { useLocation, useNavigate } from "react-router-dom";
+import { saveShippingAdress } from "../store/actions/cartAction";
 function ShippingScreen() {
-  const shippingAddress = useSelector((state) => state.cart.shippingAddress)
-  const dispatch = useDispatch()
-  const location = useLocation()
-  console.log(location)
-  const [address, setAddress] = useState(shippingAddress.address)
-  const [city, setCity] = useState(shippingAddress.city)
-  const [country, setCountry] = useState(shippingAddress.country)
-  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
-  const [phone, setPhone] = useState(shippingAddress.phone)
+  const shippingAddress = useSelector((state) => state.cart.shippingAddress);
+  const dispatch = useDispatch();
+  const location = useLocation();
+  console.log(location);
+  const [address, setAddress] = useState(shippingAddress.address);
+  const [city, setCity] = useState(shippingAddress.city);
+  const [country, setCountry] = useState(shippingAddress.country);
+  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
+  const [phone, setPhone] = useState(shippingAddress.phone);
+  const userInfo = useSelector((state) => state.userInfo);
+  const { user } = userInfo;
+  const navigate = useNavigate();
+  !user && navigate("/login");
   const submitForm = (e) => {
-    e.preventDefault()
-    const body = { address, city, phone, country, postalCode }
-    dispatch(saveShippingAdress(body))
-    window.location.replace("/payment-method")
-  }
+    e.preventDefault();
+    const body = { address, city, phone, country, postalCode };
+    dispatch(saveShippingAdress(body));
+    window.location.replace("/payment-method");
+  };
   return (
     <div className=" row shipping-screen pt-5">
       <CheckOutLine step1 step2 />
@@ -85,7 +89,7 @@ function ShippingScreen() {
         <button type="submit">التالي</button>
       </Form>
     </div>
-  )
+  );
 }
 
 export default ShippingScreen

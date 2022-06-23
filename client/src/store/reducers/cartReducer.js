@@ -14,18 +14,19 @@ export default (
       const currentItem = payload
       const inCart = state.cartItems?.find(
         (item) => item.productId === currentItem.productId
-      )
-      console.log(inCart)
+      );
       if (inCart)
         return {
           ...state,
-          error: "this Item is already is cart",
-        }
+          cartItems: state.cartItems.map((item) =>
+            item.productId === currentItem.productId ? currentItem : item
+          ),
+        };
       else
         return {
           ...state,
-          cartItems: [...state.cartItems, payload],
-        }
+          cartItems: [...state.cartItems, currentItem],
+        };
     case CART_SAVE_SHIPPING_ADDRESS:
       return {
         ...state,
