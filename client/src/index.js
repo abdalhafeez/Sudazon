@@ -1,6 +1,6 @@
 import "./index.css";
-import "./util/btns.css";
-import "./util/bootstrap.min.css";
+import "./utils/btns.css";
+import "./utils/bootstrap.min.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
