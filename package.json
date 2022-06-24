@@ -20,5 +20,9 @@
     "http-proxy-middleware": "^2.0.6",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.5"
+  },
+  "engines": {
+    "npm": ">=8.1.0",
+    "node": ">=16.13.0"
   }
 }
