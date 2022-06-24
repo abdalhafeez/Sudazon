@@ -20,6 +20,10 @@ const productSchema = mongoose.Schema(
       required: true,
       type: String,
     },
+    inStack: {
+      type: Number,
+      default: 1,
+    },
     brand: {
       required: true,
       type: String,
@@ -40,6 +44,6 @@ const productSchema = mongoose.Schema(
     ],
   },
   { timestamps: true }
-)
+);
 
 module.exports = Product = mongoose.model("Product", productSchema)

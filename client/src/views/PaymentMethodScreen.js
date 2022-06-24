@@ -2,7 +2,10 @@ import "./styles/payment.css"
 import { Form } from "react-bootstrap"
 import CheckOutLine from "../components/CheckOutLine"
 import { useState } from "react"
-import { savePaymentMethod } from "../store/actions/cartAction"
+import {
+  PaymentMethodSaveAction,
+  savePaymentMethod,
+} from "../store/actions/cartAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 function PaymentMethodScreen() {
@@ -14,7 +17,7 @@ function PaymentMethodScreen() {
   const [paymentMethod, setPaymentMethod] = useState("");
   const selectPaymentHandler = (e) => {
     e.preventDefault();
-    dispatch(savePaymentMethod(paymentMethod));
+    dispatch(PaymentMethodSaveAction(paymentMethod));
     paymentMethod && window.location.replace("/order-summary");
   };
   return (

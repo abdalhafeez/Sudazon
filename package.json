@@ -4,10 +4,11 @@
   "description": "this app makes it easy for people to find medicine.",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "server": "nodemon server",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "the Dev Knights Team",
+  "author": "Abdulhafeez Ismael",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",

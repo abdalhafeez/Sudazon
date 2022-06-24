@@ -2,16 +2,15 @@ import "./styles/productDetails.css"
 import { prods } from "../prods"
 import Rating from "../components/Rating"
 import { useEffect, useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
-import { fetchSingleProduct } from "../store/actions/productsActions"
-import { addToCartAction } from "../store/actions/cartAction"
+import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchSingleProduct } from "../store/actions/productsActions";
 function ProductDetails() {
-  const history = useLocation()
-  const id = history.pathname.split("/")[2]
+  const history = useLocation();
+  const id = history.pathname.split("/")[2];
   const dispatch = useDispatch();
   const [bigImage, setBigImage] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const tempProduct = prods[0];
   let images = [];
   for (let i = 0; i < 5; i++) {
@@ -23,9 +22,14 @@ function ProductDetails() {
   const singleProduct = useSelector((state) => state.singleProduct);
   const { /*loading, errors, */ product } = singleProduct;
   const handleAddOrder = () => {
-    // dispatch(addToCartAction(product._id, quantity));
     window.location.replace(`/cart/${product._id}?qant=${quantity}`);
   };
+
+  let inStack = [];
+  for (let i = 0; i < product.inStack; i++) {
+    inStack.push(i);
+  }
+  console.log(inStack);
   return (
     <div className="row col-md-11 col-sm-12 single-product-details ">
       <h1>تفاصيل المنتج</h1>
@@ -34,7 +38,7 @@ function ProductDetails() {
           <img src={images[bigImage]} alt="product" />
         </div>
         <div className="small-images col-12 ">
-          {images.map((image, index) => (
+          {images?.map((image, index) => (
             <div className="img-container" key={index}>
               <img
                 src={image}
@@ -79,10 +83,11 @@ function ProductDetails() {
                   setQuantity(e.target.value);
                 }}
               >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+                {inStack.splice(1, inStack.length).map((num) => (
+                  <option value={num} key={num}>
+                    {num}
+                  </option>
+                ))}
               </select>
               <button
                 onClick={() => handleAddOrder(product._id, quantity)}

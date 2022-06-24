@@ -32,7 +32,7 @@ import { prods } from "../prods"
            </div>
          ) : (
            <>
-             <div className="cart-info col-md-3 m-auto p-3">
+             <div className="cart-info col-md-4 m-auto p-3">
                <div className="price-info">
                  <ul>
                    <li>عدد مشترياتك : </li>
@@ -57,12 +57,12 @@ import { prods } from "../prods"
                        )}
                    </li>
                  </ul>
-                 <button className="check-out-btn btn btn-sm  mt-5 mb-2">
-                   دفع الفاتورة
-                 </button>
+                 <Link to="/order-summary" className="cu-btn-cyan  mt-5 mb-2">
+                   اكمال الطلب
+                 </Link>
                </div>
              </div>
-             <div className=" col-md-9 product-in-cart m-auto shadow-sm">
+             <div className=" col-md-7 product-in-cart m-auto shadow-sm">
                {cartItems?.map((item) => (
                  <div className="product align-items" key={item._id}>
                    <img
@@ -70,7 +70,7 @@ import { prods } from "../prods"
                      alt="product"
                      className="product-img"
                    />
-                   <Link to={`/product-details/${item._id}`} className>
+                   <Link to={`/product-details/${item._id}`}>
                      <h6 className="product-name text-dark">{item.name}</h6>
                    </Link>
                    <div className="price text-primary">{`جنيه ${item.price}`}</div>

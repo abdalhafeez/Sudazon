@@ -1,16 +1,6 @@
 .shipping-screen{
     margin: 0;
-}
-.shipping-screen button{
-        width: fit-content;
-    align-self: end;
-    padding: 2px 10px;
-    border: none;
-    margin: 20px 0 0 0;
-    background: var(--main-coral);
-    color: white;
-    border-radius: 5px;
-    font-weight: bold;
+    padding: 0;
 }
 .shipping-screen label{
     color: var(--main-coral);

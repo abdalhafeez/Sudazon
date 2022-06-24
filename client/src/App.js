@@ -1,3 +1,7 @@
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "./utils/bootstrap.min.css";
+import "./index.css";
+import "./utils/btns.css";
 import { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,

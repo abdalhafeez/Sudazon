@@ -1,8 +1,8 @@
 
 .env
+.vscode
 node_modules/
 /node_modules/
-.vscode
 default.json
 store.txt
  

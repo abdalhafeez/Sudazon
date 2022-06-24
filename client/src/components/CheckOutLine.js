@@ -34,11 +34,11 @@ function CheckOutLine({ step1, step2, step3, step4 }) {
           id="shipping"
         >
           {" "}
-          الشحن
+          تفاصيل الشحن
         </Link>
       ) : (
         <Link className="col-3 text-muted not-passed" disabled to="/shipping">
-          الشحن
+          تفاصيل الشحن
         </Link>
       )}
       {step3 ? (
@@ -83,7 +83,7 @@ function CheckOutLine({ step1, step2, step3, step4 }) {
         </Link>
       )}
     </nav>
-  )
+  );
 }
 
 export default CheckOutLine

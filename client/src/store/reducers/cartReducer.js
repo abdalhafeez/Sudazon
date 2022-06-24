@@ -2,16 +2,17 @@ import {
   ADD_TO_CART,
   CART_SAVE_PAYMENT_METHOD,
   CART_SAVE_SHIPPING_ADDRESS,
-} from "../constants/cartContants"
+  CART_SHIPPING_ADDRESS_REMOVE,
+} from "../constants/cartContants";
 
 export default (
   state = { cartItems: [], shippingAddress: {}, paymentMethod: "" },
   action
 ) => {
-  const { type, payload } = action
+  const { type, payload } = action;
   switch (type) {
     case ADD_TO_CART:
-      const currentItem = payload
+      const currentItem = payload;
       const inCart = state.cartItems?.find(
         (item) => item.productId === currentItem.productId
       );
@@ -31,13 +32,18 @@ export default (
       return {
         ...state,
         shippingAdress: payload,
-      }
+      };
+    case CART_SHIPPING_ADDRESS_REMOVE:
+      return {
+        ...state,
+        shippingAdress: {},
+      };
     case CART_SAVE_PAYMENT_METHOD:
       return {
         ...state,
         paymentMethod: payload,
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};

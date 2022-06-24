@@ -19,8 +19,9 @@ const createProduct = async (req, res) => {
       ratings: req.body.ratings,
       reviews: req.body.reviews,
       color: req.body.color,
+      inStack: req.body.inStack,
       size: req.body.size,
-    })
+    });
     await newProduct.save()
     res.status(201).json(newProduct)
   } catch (error) {

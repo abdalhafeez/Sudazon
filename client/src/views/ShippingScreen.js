@@ -1,10 +1,15 @@
 import "./styles/shipping.css"
-import { useState } from "react"
-import { Form } from "react-bootstrap"
-import { useDispatch, useSelector } from "react-redux"
-import CheckOutLine from "../components/CheckOutLine"
-import { useLocation, useNavigate } from "react-router-dom";
-import { saveShippingAdress } from "../store/actions/cartAction";
+import "../utils/btns.css";
+import { useState } from "react";
+import { Form } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import CheckOutLine from "../components/CheckOutLine";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  saveShippingAdress,
+  ShippingAdressRemoveAction,
+  ShippingAdressSaveAction,
+} from "../store/actions/cartAction";
 function ShippingScreen() {
   const shippingAddress = useSelector((state) => state.cart.shippingAddress);
   const dispatch = useDispatch();
@@ -19,18 +24,19 @@ function ShippingScreen() {
   const { user } = userInfo;
   const navigate = useNavigate();
   !user && navigate("/login");
-  const submitForm = (e) => {
+  const AddShippingAddress = (e) => {
     e.preventDefault();
     const body = { address, city, phone, country, postalCode };
-    dispatch(saveShippingAdress(body));
+    dispatch(ShippingAdressSaveAction(body));
     window.location.replace("/payment-method");
   };
+
   return (
-    <div className=" row shipping-screen pt-5">
+    <div className=" row shipping-screen pt-5 ">
       <CheckOutLine step1 step2 />
       <Form
-        className="col-md-7 col-sm-11 m-auto card p-3"
-        onSubmit={submitForm}
+        onSubmit={AddShippingAddress}
+        className="col-md-7 col-sm-11 m-auto card p-3 mb-5"
       >
         <h3 className=" text-center text-dark">تفاصيل الشحن</h3>
         <Form.Group>
@@ -86,7 +92,26 @@ function ShippingScreen() {
             placeholder="رمز البريد "
           ></Form.Control>
         </Form.Group>
-        <button type="submit">التالي</button>
+        <div className="align-items mt-4">
+          <span
+            className="cu-btn-danger"
+            onClick={() => dispatch(ShippingAdressRemoveAction())}
+          >
+            مسح العنون
+          </span>
+          {shippingAddress.country ? (
+            <Link to="/payment-method" className="cu-btn-cyan">
+              التالي
+            </Link>
+          ) : (
+            <input
+              type="submit"
+              to="/payment-method"
+              className="cu-btn-cyan"
+              value="اضافة العنوان"
+            />
+          )}
+        </div>
       </Form>
     </div>
   );
