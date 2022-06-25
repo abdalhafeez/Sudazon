@@ -35,7 +35,7 @@ const singupUser = async (req, res) => {
     );
   } catch (error) {
     console.log(error);
-    res.json({ errors: [{ msg: "Server Error Sucker " }] });
+    res.json({ errors: [{ msg: "Server Error ", error }] });
   }
 };
 
@@ -73,7 +73,7 @@ const longinUser = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.json({ errors: { msg: "Server Error" } });
+    res.json({ errors: [{ msg: "Server Error ", error }] });
   }
 };
 
