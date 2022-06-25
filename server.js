@@ -22,5 +22,5 @@ app.use("/api/cart", require("./routes/cartRoutes"))
       );
     });
   }
-
-app.listen(5000, () => console.log("Server is running"))
+const PORT = process.env.PORT || 500;
+app.listen(PORT, () => console.log("Server is running"));
