@@ -12,7 +12,7 @@ import {
   USER_LOGOUT,
 } from "../constants/userConstants";
 
-export const registerUser = (data) => async (dispatch) => {
+export const registerUserAction = (data) => async (dispatch) => {
   dispatch({ type: USER_SIGNUP_START });
   try {
     const res = await axiosInstance.post("/auth/singup", data);

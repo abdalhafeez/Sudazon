@@ -1,6 +1,6 @@
 import "./styles/shipping.css"
 import "../utils/btns.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import CheckOutLine from "../components/CheckOutLine";
@@ -15,7 +15,6 @@ function ShippingScreen() {
   const shippingAddress = useSelector((state) => state.cart.shippingAddress);
   const dispatch = useDispatch();
   const location = useLocation();
-  console.log(location);
   const [address, setAddress] = useState(shippingAddress.address);
   const [city, setCity] = useState(shippingAddress.city);
   const [country, setCountry] = useState(shippingAddress.country);
@@ -24,7 +23,9 @@ function ShippingScreen() {
   const userInfo = useSelector((state) => state.userInfo);
   const { user } = userInfo;
   const navigate = useNavigate();
-  !user && navigate("/login");
+  useEffect(() => {
+    !user && navigate("/login");
+  }, [user]);
   const AddShippingAddress = (e) => {
     e.preventDefault();
     const body = { address, city, phone, country, postalCode };
@@ -43,7 +44,6 @@ function ShippingScreen() {
         <Form.Group>
           <Form.Label className="mt-3">العنوان</Form.Label>
           <Form.Control
-            autoCompete="off"
             type="text"
             name="address"
             defaultValue={address}

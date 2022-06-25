@@ -3,7 +3,7 @@ import { useState } from "react"
 
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUser } from "../store/actions/userActions";
+import { registerUserAction } from "../store/actions/userActions";
 import CheckOutLine from "../components/CheckOutLine";
 const RegisterScreen = () => {
   const [email, setEmail] = useState("");
@@ -12,13 +12,13 @@ const RegisterScreen = () => {
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userInfo);
   const { loading, error, token, user } = userInfo;
-  console.log(loading, error, token);
+  console.log(token);
   const navigate = useNavigate();
   user && navigate("/shipping");
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(registerUser({ name, password, email }));
-    window.location.replace("/shipping");
+    dispatch(registerUserAction({ name, password, email }));
+    // window.location.replace("/shipping");
   };
 
   return (
