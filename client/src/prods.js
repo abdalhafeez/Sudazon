@@ -25,7 +25,6 @@ import green3 from "./assets/prods/shoes/green/green(3).jpg";
 import green4 from "./assets/prods/shoes/green/green(4).jpg";
 import green5 from "./assets/prods/shoes/green/green(5).jpg";
 import green6 from "./assets/prods/shoes/green/green(6).jpg";
-import green7 from "./assets/prods/shoes/green/green(7).jpg";
 
 import black1 from "./assets/prods/shoes/black/black(1).jpg";
 import black2 from "./assets/prods/shoes/black/black(2).jpg";
