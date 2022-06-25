@@ -1,27 +1,28 @@
 .slider{
     height: 385px;
-    background: hsl(0deg 0% 100%);
+    background: var(--main-light);
     padding: 0;
     margin: auto;
+    /* padding: 10px; */
     margin-top: 35px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding-bottom: 20px;
-    border-bottom: 2px hsl(201deg 31% 41%) solid;
+    padding-bottom: 50px;
     border-radius: 5px;
-    border: 1px var(--main-cyan) solid;
+    border: 1px hsl(180deg 46% 95%) solid;
 }
 .slider .slide{
-    margin: auto;
+      margin: auto;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition:  all ease-in-out 1s;
+    transition: all ease-in-out 1s;
+    background-color: hsl(0deg 0% 100%);
  }
   .product-details{
     background-color: hsl(0deg 0% 100%);
@@ -40,17 +41,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    background-color: white;
 }
 
 .slide .img-container img{
-height: 300px;
+height: 200px;
     width: 300px;
     margin: auto;
     object-fit: contain;
  
 }
-.slide .product-details .brand{
+.slide .brand{
     color: coral;
+    text-align: center;
+    /* font-family: 'Courier New', Courier; */
+    text-decoration: none;
 
 }
 .slide .product-details .desc{
@@ -81,15 +87,16 @@ height: 300px;
 /* /////////////////////////////// */
 @media only screen and (max-width: 800px) {
     .slider{
-        height: 80vh;
-        /* border: none; */
-    }
+     height: 45vh;
+    border: none;
+    margin-top: 0;}
  .product-details{
    
     height: fit-content !important;
     width: 100% !important;
     margin: auto;
     margin-top: 5px;
+    display: none;
 }
 
 .slider .img-container{
@@ -98,10 +105,11 @@ height: 300px;
  
 }
 .slider .img-container{
-        height: 50%;
+     height: 100%;
     width: 100%;
     margin: auto;
     object-fit: cover;
+    padding-top: 25px;
 }
 
 .img-container img{

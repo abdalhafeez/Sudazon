@@ -20,7 +20,7 @@ function Beauty() {
       <h2 className=" tx-coral latest-products-title">منتجات التجميل</h2>
       {beauty[0].images.map((image) => {
         return (
-          <div className="col-md-4 col-sm-5 m-auto  mt-2" key={image}>
+          <div className="col-md-4 col-6 m-auto  mt-2   mt-2" key={image}>
             <span
               className="overlay"
               onMouseEnter={() => showShopHandler(image)}

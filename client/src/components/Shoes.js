@@ -16,11 +16,11 @@ function Shoes() {
     setShowShop(prod.image);
   };
   return (
-    <div className="col-md-10 col-sm-12 row latest-products shadow-sm  p-3 mt-3">
+    <div className="col-md-10 col-11 row latest-products shadow-sm  p-3 mt-3">
       <h2 className=" tx-coral latest-products-title">الاحذية</h2>
       {prods[1].images.map((image) => {
         return (
-          <div className="col-md-4 col-sm-5 m-auto  mt-2" key={image}>
+          <div className="col-md-4 col-6 m-auto  mt-2" key={image}>
             <span
               className="overlay"
               onMouseEnter={() => showShopHandler(image)}

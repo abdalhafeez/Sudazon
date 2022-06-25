@@ -1,11 +1,14 @@
 .latest-products{
-    display: flex;
+   display: flex;
     justify-content: space-around;
+    /* box-shadow: var(--main-shadow); */
+    background: var(--main-light);
+    /* border: 1px hsl(180deg 46% 95%) solid; */
 
 }
 .latest-products div{
     /* /* width :200px; */
-     height: 300px;
+     height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,8 +41,7 @@
          font-size: 30px;
     font-weight: bold;
     border-right: 5px hsl(180deg 100% 50%) solid;
-    margin: 10px;
-    color: hsl(16deg 100% 66%);
+     color: hsl(16deg 100% 66%);
     padding: 5px 10px;
    
 }
@@ -80,4 +82,14 @@
     align-items: center;
     height: 33%;
       padding: 10px;
+}
+
+
+@media only screen and (max-width: 800px) {
+   .latest-products div{
+     height: 250px;
+  
+    
+}
+
 }

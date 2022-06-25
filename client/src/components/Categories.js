@@ -1,20 +1,28 @@
-import "./styles/categories.css"
+import { beauty, prods } from "../prods";
+import "./styles/categories.css";
 
-function Categories() {
+function Categories({ screenWidth }) {
+  console.log(screenWidth);
   return (
-    <div className="categories row col-md-7 col-sm-12 ">
-      <div className="category m-auto col-3 ">
-        <div className="overlay">
-          <p>اعرض كل الاحذية النسائية</p>
+    <div className="categories col-md-9 col-12">
+      {/* <div
+        
+        style={{ width: `${screenWidth / 3}px` }}
+      >
+        <img src={prods[1].images[0]} alt="" className="category " />
+      </div> */}
+      {beauty[0].images.map((image) => (
+        <div
+        // style={{
+        //   width: `${screenWidth }px`,
+        // }}
+        >
+          <div className="text-center text-dark">this is a title</div>
+          <img src={image} alt="" className=" " />
         </div>
+      ))}
 
-        <div className="cat-container">
-          <div className="title">
-            <h4>نسائي</h4>
-          </div>
-          <i className="bi bi-gender-female"></i>
-        </div>
-      </div>
+      {/*       
       <div className="category m-auto col-3 ">
         <div className="overlay">
           <p>اعرض كل الاحذية النسائية</p>
@@ -38,9 +46,9 @@ function Categories() {
           </div>
           <i className="bi bi-person-hearts"></i>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
 
-export default Categories
+export default Categories;

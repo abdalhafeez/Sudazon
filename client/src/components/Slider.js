@@ -49,6 +49,8 @@ function Slider({ products }) {
             to={`/product-details/${"62b71e52ecc055f3cf9367cf"}`}
             className="col-md-6 col-sm-12 row img-container"
           >
+            <h3 className="brand fm-taj">Nike - نايكي</h3>
+
             <div className="col-12 ">
               <img src={prod.images[0]} alt="product" />
             </div>

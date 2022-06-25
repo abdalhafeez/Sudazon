@@ -1,6 +1,6 @@
 :root{
-  --main-light:hsl(201deg 100% 99%);
-  --main-lighter:hsl(16deg 100% 100%);
+  --main-light:hsl(180deg 46% 95%);
+  --main-lighter:hsl(180deg 46% 98%);
   --main-light-text:#cfcfcf;
   --main-dark:#003049;
   --main-light-dark:hsl(201deg 31% 41%);
@@ -55,10 +55,13 @@ body {
 .App{
   padding: 0;
   margin: 0;
-  background-color: var(--main-light)
+  background-color: var(--main-lighter)
   ;
   min-height: 100vh;
   /* width: 100vw;  */
+}
+.home{
+  margin-top: 50px;
 }
 .links{
       display: flex;

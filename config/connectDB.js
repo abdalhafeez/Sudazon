@@ -3,8 +3,8 @@ const mongoose = require(
 module.exports = connectDB = () => {
   mongoose
     .connect(
-      "mongodb://localhost/E-shop",
-      // process.env.DB_URI,
+      // "mongodb://localhost/E-shop",
+      process.env.DB_URI,
       {
         useNewUrlParser: true,
       }
