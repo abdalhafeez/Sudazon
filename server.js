@@ -14,13 +14,12 @@ app.use("/api/products", require("./routes/productsRoutes"))
 app.use("/api/orders", require("./routes/ordersRoutes"))
 app.use("/api/cart", require("./routes/cartRoutes"))
   if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "/client/build")));
+  app.use(express.static(path.join(__dirname, "client", "build")));
 
-    app.get("*", (req, res) => {
-      app.use(
-        express.static(path.resolve(__dirname, "client", "build", "index.html"))
-      );
-    });
+  // Right before your app.listen(), add this:
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
   }
 const PORT = process.env.PORT || 500;
 app.listen(PORT, () => console.log("Server is running"));
