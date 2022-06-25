@@ -12,10 +12,7 @@ function ProductDetails() {
   const [bigImage, setBigImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const tempProduct = prods[0];
-  let images = [];
-  for (let i = 0; i < 5; i++) {
-    images.push(prods[i].image);
-  }
+
   useEffect(() => {
     dispatch(fetchSingleProduct(id));
   }, [dispatch, id]);
@@ -35,17 +32,17 @@ function ProductDetails() {
       <h1>تفاصيل المنتج</h1>
       <div className="images-container col-sm-12 col-md-6 m-auto mt-3 row">
         <div className="big-image col-12  shadow-sm">
-          <img src={images[bigImage]} alt="product" />
+          <img src={prods[1].images[bigImage]} alt="product" />
         </div>
-        <div className="small-images col-12 ">
-          {images?.map((image, index) => (
-            <div className="img-container" key={index}>
-              <img
-                src={image}
-                alt="product"
-                onClick={(e) => setBigImage(index)}
-              />
-            </div>
+        <div className="small-images col-12">
+          {prods[1].images?.map((image, index) => (
+            <img
+              src={image}
+              alt="product"
+              className=""
+              onClick={(e) => setBigImage(index)}
+              key={index}
+            />
           ))}
         </div>
       </div>

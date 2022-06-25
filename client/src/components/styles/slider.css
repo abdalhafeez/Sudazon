@@ -42,13 +42,12 @@
     align-items: center;
 }
 
-.img-container img{
-
-    height: 86%;
-    width: 93%;
+.slide .img-container img{
+height: 300px;
+    width: 300px;
     margin: auto;
-    object-fit: cover;
-
+    object-fit: contain;
+ 
 }
 .slide .product-details .brand{
     color: coral;

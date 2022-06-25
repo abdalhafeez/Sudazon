@@ -46,11 +46,11 @@ function Slider({ products }) {
             <BuyBtn />
           </Card>
           <Link
-            to={`/product-details/${"62b482a157266f67e7a5fa7d"}`}
+            to={`/product-details/${"62b71e52ecc055f3cf9367cf"}`}
             className="col-md-6 col-sm-12 row img-container"
           >
             <div className="col-12 ">
-              <img src={prod.image} alt="product" />
+              <img src={prod.images[0]} alt="product" />
             </div>
           </Link>
         </div>

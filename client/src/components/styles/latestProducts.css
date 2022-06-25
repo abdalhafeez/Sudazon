@@ -5,7 +5,7 @@
 }
 .latest-products div{
     /* /* width :200px; */
-    height: 350px; 
+     height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,8 +17,7 @@
 .latest-products img{
     width: 100%;
     height: 100%;
-    box-shadow: 0 0 16px -12px #003049;
-    border-radius: 7px;
+     border-radius: 7px;
 
 }
 
