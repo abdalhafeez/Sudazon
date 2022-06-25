@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../store/actions/userActions";
+import CheckOutLine from "../components/CheckOutLine";
 const RegisterScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,12 +22,13 @@ const RegisterScreen = () => {
   };
 
   return (
-    <div className=" login row">
+    <div className=" wrapper">
+      <CheckOutLine step1 />
       <form
         onSubmit={handleSubmit}
-        className="p-3  col-10 col-md-5 shadow-sm mt-5"
+        className=" p-3  col-10 col-md-7 shadow-sm m-auto mt-3"
       >
-        <h3 className="text-center tx-lt ">حساب جديد</h3>
+        <h3 className="text-center tx-coral ">حساب جديد</h3>
 
         <div className="f-grp">
           <label className="tx-lt">الاسم</label>

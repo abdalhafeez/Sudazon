@@ -33,7 +33,7 @@ function ShippingScreen() {
   };
 
   return (
-    <Container>
+    <div className="wrapper">
       <CheckOutLine step1 step2 />
       <Form
         onSubmit={AddShippingAddress}
@@ -117,7 +117,7 @@ function ShippingScreen() {
           )}
         </div>
       </Form>
-    </Container>
+    </div>
   );
 }
 

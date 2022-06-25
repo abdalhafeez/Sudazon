@@ -17,16 +17,16 @@ const LoginScreen = () => {
     e.preventDefault();
     dispatch(loginUser({ password, email }));
     if (error) return;
-    window.location.replace("/shipping");
+    // window.location.replace("/shipping");
   };
   return (
-    <Container>
+    <div className="wrapper">
       <CheckOutLine step1 />
       <form
         onSubmit={handleSubmit}
-        className=" p-3  col-10 col-md-7 shadow-sm m-auto"
+        className=" p-3  col-10 col-md-7 shadow-sm m-auto mt-3"
       >
-        <h3 className="text-center form-color ">تسجيل الدخول </h3>
+        <h3 className="text-center tx-coral ">تسجيل الدخول </h3>
 
         <div className="f-grp">
           <label className="form-color">الإيميل</label>
@@ -62,7 +62,7 @@ const LoginScreen = () => {
           </div>
         </div>
       </form>
-    </Container>
+    </div>
   );
 };
 

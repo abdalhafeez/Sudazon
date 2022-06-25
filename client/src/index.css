@@ -12,14 +12,18 @@
 }
 /* @import 'bootstrap/dist/css/bootstrap.css'; */
 .wrapper{
-     margin: auto;
+
+    margin: auto;
     margin-top: 50px;
     padding: 20px 0;
     min-height: 80vh;
-    display: flex;
-    align-items: self-start;
     box-shadow: 0 0 15px -5px rgba(0,0,0,.075)!important;
+    display: flex;
     background: var(--main-light);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
 }
 body {
   margin: 0;

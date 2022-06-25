@@ -19,7 +19,7 @@ function CartScreen() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   return (
-    <Container>
+    <div className="wrapper">
       <div className="cart-screen row">
         <div className="title-parent">
           <h2 className="mb-5 text-center title"> سلة مشترياتك</h2>
@@ -96,7 +96,7 @@ function CartScreen() {
           </>
         )}
       </div>
-    </Container>
+    </div>
   );
 }
 

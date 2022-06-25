@@ -19,6 +19,7 @@ export const registerUser = (data) => async (dispatch) => {
     console.log(res);
     dispatch({ type: USER_SIGNUP_SUCCESS, payload: res.data });
   } catch (error) {
+    console.log(error);
     dispatch({
       type: USER_SIGNUP_FAILURE,
       payload:
@@ -35,6 +36,7 @@ export const loginUser = (data) => async (dispatch) => {
     const res = await axiosInstance.post("/auth/login", data);
     dispatch({ type: USER_LOGIN_SUCCESS, payload: res.data });
   } catch (error) {
+    console.log(error);
     dispatch({
       type: USER_LOGIN_FAILURE,
       payload:
