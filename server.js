@@ -21,5 +21,5 @@ app.use("/api/cart", require("./routes/cartRoutes"))
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
   }
-const PORT = process.env.PORT || 500;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log("Server is running"));
