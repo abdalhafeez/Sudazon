@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import CheckOutLine from "../components/CheckOutLine";
 import { loginUser } from "../store/actions/userActions";
+import Container from "../components/Container";
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,11 +20,11 @@ const LoginScreen = () => {
     window.location.replace("/shipping");
   };
   return (
-    <div className="login row mb-5">
+    <Container>
       <CheckOutLine step1 />
       <form
         onSubmit={handleSubmit}
-        className=" p-3  col-10 col-md-7 shadow-sm mt-5"
+        className=" p-3  col-10 col-md-7 shadow-sm m-auto"
       >
         <h3 className="text-center form-color ">تسجيل الدخول </h3>
 
@@ -61,7 +62,7 @@ const LoginScreen = () => {
           </div>
         </div>
       </form>
-    </div>
+    </Container>
   );
 };
 

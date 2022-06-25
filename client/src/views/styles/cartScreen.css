@@ -67,11 +67,11 @@ padding: 10px;
 .price-info{
     width: 100%;
     margin: 0;
-    /* border: 1px hsl(201deg 74% 22% / 6%) solid; */
+    border: 1px hsl(201deg 74% 22% / 6%) solid;
     padding: 0 10px;
-    background: hsl(201deg 31% 41%);
+    /* background: var(--main-light-gray); */
     border-radius: 5px;
-    color: hsl(0deg 0% 100%);
+    color:var(--main-light-dark);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,7 +83,7 @@ padding: 10px;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border: 1px hsl(0deg 0% 100%) solid;
+    border: 1px var(--main-light-dark) solid;
     padding: 5px;
 
 }

@@ -19,11 +19,11 @@ function CheckOutLine({ step1, step2, step3, step4 }) {
           ref={idRed}
         >
           {" "}
-          تسجيل الدخول
+          الدخول
         </Link>
       ) : (
         <Link className="col-3 text-muted not-passed" disabled to="/login">
-          تسجيل الدخول
+          الدخول
         </Link>
       )}
       {step2 ? (
@@ -34,11 +34,11 @@ function CheckOutLine({ step1, step2, step3, step4 }) {
           id="shipping"
         >
           {" "}
-          تفاصيل الشحن
+          الشحن
         </Link>
       ) : (
         <Link className="col-3 text-muted not-passed" disabled to="/shipping">
-          تفاصيل الشحن
+          الشحن
         </Link>
       )}
       {step3 ? (
@@ -71,7 +71,7 @@ function CheckOutLine({ step1, step2, step3, step4 }) {
           id="order-summary"
         >
           {" "}
-          ملخص الطلب
+          الطلب
         </Link>
       ) : (
         <Link
@@ -79,7 +79,7 @@ function CheckOutLine({ step1, step2, step3, step4 }) {
           disabled
           to="/order-summary"
         >
-          ملخص الطلب
+          الطلب
         </Link>
       )}
     </nav>

@@ -10,6 +10,7 @@ import {
   ShippingAdressRemoveAction,
   ShippingAdressSaveAction,
 } from "../store/actions/cartAction";
+import Container from "../components/Container";
 function ShippingScreen() {
   const shippingAddress = useSelector((state) => state.cart.shippingAddress);
   const dispatch = useDispatch();
@@ -32,11 +33,11 @@ function ShippingScreen() {
   };
 
   return (
-    <div className=" row shipping-screen pt-5 ">
+    <Container>
       <CheckOutLine step1 step2 />
       <Form
         onSubmit={AddShippingAddress}
-        className="col-md-7 col-sm-11 m-auto card p-3 mb-5"
+        className="col-md-7 col-sm-11 m-auto p-3 mb-5"
       >
         <h3 className=" text-center text-dark">تفاصيل الشحن</h3>
         <Form.Group>
@@ -95,12 +96,15 @@ function ShippingScreen() {
         <div className="align-items mt-4">
           <span
             className="cu-btn-danger"
-            onClick={() => dispatch(ShippingAdressRemoveAction())}
+            onClick={() => {
+              dispatch(ShippingAdressRemoveAction());
+              window.location.reload();
+            }}
           >
             مسح العنون
           </span>
           {shippingAddress.country ? (
-            <Link to="/payment-method" className="cu-btn-cyan">
+            <Link to="/payment-method" className="cu-btn-cyan px-3">
               التالي
             </Link>
           ) : (
@@ -113,7 +117,7 @@ function ShippingScreen() {
           )}
         </div>
       </Form>
-    </div>
+    </Container>
   );
 }
 

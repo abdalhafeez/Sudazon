@@ -21,9 +21,9 @@ function PaymentMethodScreen() {
     paymentMethod && window.location.replace("/order-summary");
   };
   return (
-    <div className="payment row m-auto col-10 pt-5">
+    <div className="payment row  col-10 pt-5">
       <CheckOutLine step1 step2 step3 />
-      <Form onSubmit={selectPaymentHandler} className="payment-method">
+      <Form onSubmit={selectPaymentHandler} className="payment-method m-auto">
         <h2 className="mb-5"> طريقة الدفع</h2>
         <Form.Group>
           <Form.Label as="legen">اختر طريقة الدفع </Form.Label>
