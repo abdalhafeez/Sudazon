@@ -1,0 +1,12 @@
+.errors{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.errors div{
+       box-shadow: var(--main-shadow-lg);
+    background: hsl(0deg 100% 50%);
+    padding: 2px 10px;
+    color: hsl(0deg 0% 100%) !important;
+}

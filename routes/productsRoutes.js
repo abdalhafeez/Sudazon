@@ -14,15 +14,16 @@ router.post(
   "/",
   authMiddleware,
   [
-    check("name", "item name is required").not().isEmpty(),
-    check("price", "price  is required").not().isEmpty(),
-    check("description", "isDelivered status is required").not().isEmpty(),
-    check("brand", "brand status is required").not().isEmpty(),
-    check("category", "brand status is required").not().isEmpty(),
-    check("ratings", "ratings is required").not().isEmpty(),
+    check("name", "اكتب عنون المنتج").not().isEmpty(),
+    check("price", "اكتب السعر").not().isEmpty(),
+    check("description", "اكتب وصف للمنتج").not().isEmpty(),
+    check("brand", "اختر الماركة").not().isEmpty(),
+    check("category", "اختر الصف").not().isEmpty(),
+    check("color", "اختر لون المنتج").not().isEmpty(),
+    check("size", "اختر لون المقاس").not().isEmpty(),
   ],
   createProduct
-)
+);
 router.get("/:id", fetchtProductById)
 router.put("/:id", authMiddleware, editProduct)
 router.delete("/:id", authMiddleware, deleteProduct)

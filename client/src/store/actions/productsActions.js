@@ -1,12 +1,37 @@
 import { axiosInstance } from "../../utils/axiosInstance"
 import {
+  PRODUCT_CREATE_REQUEST_FAILURE,
+  PRODUCT_CREATE_REQUEST_START,
+  PRODUCT_CREATE_REQUEST_SUCCESS,
   PRODUCT_LIST_REQUEST_FAILURE,
   PRODUCT_LIST_REQUEST_START,
   PRODUCT_LIST_REQUEST_SUCCESS,
   SINGLE_PRODUCT_REQUEST_FAILURE,
   SINGLE_PRODUCT_REQUEST_START,
   SINGLE_PRODUCT_REQUEST_SUCCESS,
-} from "../constants/productConstants"
+} from "../constants/productConstants";
+
+export const productCreateAction = (body) => async (dispatch) => {
+  try {
+    dispatch({ type: PRODUCT_CREATE_REQUEST_START });
+    const res = await axiosInstance.post("/products", body);
+    res.data &&
+      dispatch({ type: PRODUCT_CREATE_REQUEST_SUCCESS, payload: res.data });
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_CREATE_REQUEST_FAILURE,
+      payload:
+        error.response && error.response.data
+          ? error.response.data.errors
+          : error.message,
+    });
+  }
+};
+
+
+
+
+
 export const fetchProducts = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST_START })

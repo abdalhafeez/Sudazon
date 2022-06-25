@@ -5,8 +5,7 @@ const Product = require("../models/Product")
 const createProduct = async (req, res) => {
   const errors = validationResult(req)
   if (!errors.isEmpty()) {
-    console.log(errors)
-    return res.status(401).json({ errors: errors.array() })
+    return res.status(401).json({ errors: errors.array() });
   }
   try {
     const newProduct = new Product({
