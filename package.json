@@ -19,7 +19,8 @@
     "helmet": "^5.1.0",
     "http-proxy-middleware": "^2.0.6",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.3.5"
+    "mongoose": "^6.3.5",
+    "serve": "^13.0.2"
   },
   "engines": {
     "npm": "8.1.0",
