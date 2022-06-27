@@ -18,8 +18,8 @@ const RegisterScreen = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(registerUserAction({ name, password, email }));
-    // window.location.replace("/shipping");
   };
+  token && window.location.replace("/");
 
   return (
     <div className=" wrapper">

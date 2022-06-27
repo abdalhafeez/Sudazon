@@ -53,7 +53,7 @@ const longinUser = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
-    const isMatched = await bcrypt.compare(password, user.password);
+     const isMatched = await bcrypt.compare(password, user.password);
     if (user && isMatched) {
       const payload = { user: { id: user._id } };
       jwt.sign(

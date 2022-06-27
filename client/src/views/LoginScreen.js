@@ -11,14 +11,15 @@ const LoginScreen = () => {
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.userInfo);
   const { loading, error, token, user } = userInfo;
+  console.log(token);
   const navigate = useNavigate();
   user && navigate("/shipping");
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(loginUser({ password, email }));
-    if (error) return;
-    // window.location.replace("/shipping");
   };
+  token && window.location.replace("/");
+
   return (
     <div className="wrapper">
       <CheckOutLine step1 />

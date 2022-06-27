@@ -34,6 +34,7 @@ export const loginUser = (data) => async (dispatch) => {
   dispatch({ type: USER_LOGIN_START });
   try {
     const res = await axiosInstance.post("/auth/login", data);
+    console.log(res);
     dispatch({ type: USER_LOGIN_SUCCESS, payload: res.data });
   } catch (error) {
     console.log(error);
