@@ -27,18 +27,19 @@ function Slider({ products }) {
 
   return (
     <div className="slider row col-sm-12 col-md-11">
-      {prods?.map((prod) => (
+      {prods.map((prod) => (
         <div
           key={prod.id}
           className="slide row col-12 "
           ref={slideRef}
           style={{ transform: `translateX(${sliderWidth * currentSlide}px)` }}
         >
+          {/* THIS CARD SHOW ON LARGE SCREEN */}
           <Card className="col-md-6 col-sm-12 product-details ">
             <Card.Body className="card-align">
               <Card.Title className="text-dark">{prod.name} </Card.Title>
               <div className="buy-btn-parent">
-                <h5 className="brand">Nike - نايكي</h5>
+                <h5 className="brand">حذاء رياضي برقبة منخفضة</h5>
               </div>
               <Card.Text className="desc">{prod.desc}</Card.Text>
               <Rating />
@@ -49,10 +50,12 @@ function Slider({ products }) {
             to={`/product-details/${"62b71e52ecc055f3cf9367cf"}`}
             className="col-md-6 col-sm-12 row img-container"
           >
-            <h3 className="brand fm-taj">Nike - نايكي</h3>
-
+            <header>
+              <h5 className="brand">حذاء رياضي برقبة منخفضة</h5>
+              <small>{prod.desc}</small>
+            </header>
             <div className="col-12 ">
-              <img src={prod.images[0]} alt="product" />
+              <img src={prod.images[1]} alt="product" />
             </div>
           </Link>
         </div>

@@ -1,24 +1,19 @@
-import { beauty, prods } from "../prods";
+import { prods } from "../prods";
 import "./styles/categories.css";
-
+// const categories = prods.reduce((acc, current) => {
+//   if (!acc?.includes(current.area)) {
+//     acc.push(acc.area);
+//   }
+// }, []);
+// console.log(categories);
 function Categories({ screenWidth }) {
   console.log(screenWidth);
   return (
     <div className="categories col-md-9 col-12">
-      {/* <div
-        
-        style={{ width: `${screenWidth / 3}px` }}
-      >
-        <img src={prods[1].images[0]} alt="" className="category " />
-      </div> */}
-      {beauty[0].images.map((image) => (
-        <div
-        // style={{
-        //   width: `${screenWidth }px`,
-        // }}
-        >
-          <div className="text-center text-dark">this is a title</div>
-          <img src={image} alt="" className=" " />
+      {prods.slice(0, 4).map((prod) => (
+        <div>
+          <div className="text-center text-dark">{prod.area}</div>
+          <img src={prod.images[3]} alt="category" key={prod.id} />
         </div>
       ))}
 

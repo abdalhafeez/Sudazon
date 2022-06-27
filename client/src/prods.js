@@ -13,6 +13,13 @@ import cream4 from "./assets/prods/cream/cream(4).jpg";
 import cream5 from "./assets/prods/cream/cream(5).jpg";
 import cream6 from "./assets/prods/cream/cream(6).jpg";
 
+import home1 from "./assets/prods/tools/home(1).jpg";
+import home2 from "./assets/prods/tools/home(2).jpg";
+import home3 from "./assets/prods/tools/home(3).jpg";
+
+import clothes1 from "./assets/prods/tools/clothes(1).jpg";
+import clothes2 from "./assets/prods/tools/clothes(2).jpg";
+
 import pink1 from "./assets/prods/shoes/pink/pink(1).jpg";
 import pink2 from "./assets/prods/shoes/pink/pink(2).jpg";
 import pink3 from "./assets/prods/shoes/pink/pink(3).jpg";
@@ -34,9 +41,40 @@ import black5 from "./assets/prods/shoes/black/black(5).jpg";
 import black6 from "./assets/prods/shoes/black/black(6).jpg";
 import black7 from "./assets/prods/shoes/black/black(7).jpg";
 
-export const beauty = [
+export const prods = [
   {
+    price: 12000,
+    area: "الاحذية و الملبوسات",
+    characteristics: [],
+    inStock: 4,
     id: 1,
+    desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
+    title: "              حذاء رياضي برقبة منخفضة",
+    images: [pink1, pink2, pink3, pink4, pink5],
+  },
+
+  {
+    price: 5000,
+    inStock: 4,
+    area: "الاحذية و الملبوسات",
+    characteristics: [],
+    id: 2,
+    desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
+    title: "Nike - نايكي",
+    images: [clothes1, green3, green4, clothes2, green5, green6],
+  },
+  {
+    price: 5000,
+    inStock: 4,
+    area: "الاحذية و الملبوسات",
+    characteristics: [],
+    id: 3,
+    desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
+    title: "نايكي رياضي",
+    images: [black1, black2, black3, black4, black5, black6, black7],
+  },
+  {
+    id: 4,
     images: [cream1, cream2, cream3, cream4, cream5, cream6],
     name: "مرطب بشرة اديل",
     desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
@@ -49,104 +87,42 @@ export const beauty = [
     medical: true,
   },
   {
-    id: 2,
-    images: [],
-    name: "لاس فوس",
-    desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
-    smell: "بدون رائحة",
-    brand: "سلامة الطبية",
-    usedFor: "لحماية فروة الراس",
-    category: "شعر",
-    area: "التجميل",
-    characteristics: [],
-    medical: true,
-  },
-  {
-    id: 3,
-    image: [],
+    id: 5,
+    images: [home1, home2, home3],
     name: "مرطب بشرة اديل",
-    desc: " حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما ",
+    desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
     smell: "بدون رائحة",
     brand: "سلامة الطبية",
     usedFor: "لازالة حبة الشباب و تفتيح البشرة",
     category: "بشرة",
-    area: "التجميل",
+    area: "ادوات و اثاث المنزل",
     characteristics: [],
     medical: true,
   },
-];
-export const prods = [
-  {
-    price: 12000,
-    inStock: 4,
-
-    id: 1,
-    desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
-    title: "              حذاء رياضي برقبة منخفضة",
-    images: [pink1, pink2, pink3, pink4, pink5],
-  },
-
-  {
-    price: 5000,
-    inStock: 4,
-
-    id: 2,
-    desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
-    title: "Nike - نايكي",
-    images: [green1, green2, green3, green4, green5, green6],
-  },
-  {
-    price: 5000,
-    inStock: 4,
-
-    id: 3,
-    desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
-    title: "نايكي رياضي",
-    images: [black1, black2, black3, black4, black5, black6, black7],
-  },
   // {
-  //   price: 5000,
-  //   inStock: 4,
-
-  //   id: 4,
-  //   desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
-  //   title: " حذاء رياضي نسائي خفيف الوزن",
-  //   images: [img2, img3, img4, img5, img6],
-  // },
-  // {
-  //   price: 5000,
-  //   inStock: 4,
-
   //   id: 5,
+  //   images: [],
+  //   name: "لاس فوس",
   //   desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
-  //   title: " جلد ايطالي شبابي",
-  //   images: [img2, img3, img4, img5, img6],
+  //   smell: "بدون رائحة",
+  //   brand: "سلامة الطبية",
+  //   usedFor: "لحماية فروة الراس",
+  //   category: "شعر",
+  //   area: "التجميل",
+  //   characteristics: [],
+  //   medical: true,
   // },
   // {
-  //   price: 5000,
-  //   inStock: 4,
-
   //   id: 6,
-  //   desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
-  //   title: " حذاء رياضي نسائي خفيف الوزن",
-  //   images: [img2, img3, img4, img5, img6],
-  // },
-  // {
-  //   price: 5000,
-  //   inStock: 4,
-
-  //   id: 7,
-  //   desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
-  //   title: " حذاء رياضي نسائي خفيف الوزن",
-  //   images: [img2, img3, img4, img5, img6],
-  // },
-  // {
-  //   price: 5000,
-  //   inStock: 4,
-
-  //   id: 8,
-  //   desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
-  //   title: " حذاء رياضي نسائي خفيف الوزن",
-  //   images: [img2, img3, img4, img5, img6],
+  //   image: [],
+  //   name: "مرطب بشرة اديل",
+  //   desc: " حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما ",
+  //   smell: "بدون رائحة",
+  //   brand: "سلامة الطبية",
+  //   usedFor: "لازالة حبة الشباب و تفتيح البشرة",
+  //   category: "بشرة",
+  //   area: "التجميل",
+  //   characteristics: [],
+  //   medical: true,
   // },
 ];

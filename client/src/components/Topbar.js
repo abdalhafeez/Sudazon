@@ -1,9 +1,7 @@
-import "./styles/topbar.css"
-import JoinBtns from "./JoinBtns"
-import { Link } from "react-router-dom"
-import Search from "./Search"
-
-import AdminMenu from "./AdminMenu"
+import "./styles/topbar.css";
+import { Link } from "react-router-dom";
+import Search from "./Search";
+import AdminMenu from "./AdminMenu";
 import { useSelector, useDispatch } from "react-redux";
 function Topbar({ showMenu, setShowMenu }) {
   const dispatch = useDispatch();
@@ -35,10 +33,15 @@ function Topbar({ showMenu, setShowMenu }) {
             ""
           )
         ) : (
-          <JoinBtns />
+          <div className="join-btns ">
+            {" "}
+            <Link to="/login" className=" mx-1 ">
+              تسجيل الدخول
+            </Link>
+          </div>
         )}
       </div>
-      <div className="search-parent d-none d-sm-block d-ms-none d-md-block">
+      <div className="search-parent d-none d-ms-none d-md-block">
         <Search />
       </div>
       <Link to="/" className="link text-center logo">
@@ -48,4 +51,4 @@ function Topbar({ showMenu, setShowMenu }) {
   );
 }
 
-export default Topbar
+export default Topbar;

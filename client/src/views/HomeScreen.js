@@ -5,8 +5,7 @@ import Search from "../components/Search";
 import { fetchProducts } from "../store/actions/productsActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState, useRef } from "react";
-import Shoes from "../components/Shoes";
-import Beauty from "../components/Beauty.js";
+import Products from "../components/Products";
 
 function Home() {
   const dispatch = useDispatch();
@@ -21,13 +20,12 @@ function Home() {
   }, [dispatch]);
   return (
     <div className="home row pb-3" ref={homeRef}>
-      <div className="col-12 search-wrapper">
+      <div className="col-12 search-wrapper d-none d-sm-block  d-md-none">
         <Search />
       </div>
       <Slider products={products} />
       <Categories screenWidth={screenWidth} />
-      <Shoes products={products} />
-      <Beauty products={products} />
+      <Products products={products} />
     </div>
   );
 }

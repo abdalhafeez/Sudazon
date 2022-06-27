@@ -128,3 +128,10 @@ background: var(--main-dark);
 .join-btns{
  flex-grow: 1;
 }
+.join-btns a{
+    text-decoration: none;
+    color: hsl(201deg 100% 14%) !important;
+    background: hsl(180deg 46% 95%);
+    padding: 3px 5px;
+    border-radius: 3px;
+}

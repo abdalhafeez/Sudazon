@@ -89,6 +89,9 @@ link{
 .tx-lt{
   color: #27495c;
 }
+.tx-cyan{
+  color: cyan;
+}
 .tx-lt-dark{
   color: #5c7b8d;
 }
@@ -99,6 +102,7 @@ link{
 .bg-coral{
   background: coral;
 }
+
 .tx-white{
   color: white;
 } 
