@@ -1,5 +1,6 @@
 import React from "react";
 import Beauty from "./Beauty.js.js";
+import House from "./House.js";
 import Shoes from "./Shoes";
 
 function Products() {
@@ -7,6 +8,7 @@ function Products() {
     <>
       <Beauty />
       <Shoes />
+      <House />
     </>
   );
 }

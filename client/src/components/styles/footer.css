@@ -1,0 +1,9 @@
+footer{
+        margin-top: 20px;
+    background: var(--main-light-dark);
+    color: var(--main-light);
+    padding: 10px;
+}
+.footer a{
+text-decoration: none;
+}

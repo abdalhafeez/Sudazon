@@ -1,15 +1,16 @@
-const mongoose = require(
-"mongoose")
+var colors = require("colors/safe");
+
+const mongoose = require("mongoose");
 module.exports = connectDB = () => {
   mongoose
     .connect(
-      // "mongodb://localhost/E-shop",
-      process.env.DB_URI,
+      "mongodb://localhost/E-shop",
+      // process.env.DB_URI,
       {
         useNewUrlParser: true,
       }
     )
-    .then(() => console.log("DB Connected!"))
+    .then(() => console.log(colors.underline.yellow("DB Connected!")))
     .catch((e) => console.log(e));
-}
-console.log()
+};
+console.log();

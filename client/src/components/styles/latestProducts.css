@@ -2,7 +2,7 @@
    display: flex;
     justify-content: space-around;
     /* box-shadow: var(--main-shadow); */
-    background: var(--main-light);
+    /* background: var(--main-light); */
     /* border: 1px hsl(180deg 46% 95%) solid; */
 
 }
@@ -28,7 +28,7 @@
 
 .latest-products .overlay{
     position: absolute;
-    width: 90%;
+    width: 92%;
     height: 100%;
     transition: all ease-in-out 0.3s;
     cursor: pointer;
@@ -100,9 +100,7 @@
 
 @media only screen and (max-width: 800px) {
    .latest-products div{
-     height: 250px;
-  
-    
+     height: 250px; 
 }
 
 }

@@ -16,14 +16,17 @@
     margin: auto;
     margin-top: 50px;
     padding: 20px 0;
-    min-height: 80vh;
+    min-height: 100vh;
     box-shadow: 0 0 15px -5px rgba(0,0,0,.075)!important;
     display: flex;
-    background: var(--main-light);
+    background: var(--main-lighter);
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
+}
+.h100{
+  min-height: 100vh;
 }
 body {
   margin: 0;

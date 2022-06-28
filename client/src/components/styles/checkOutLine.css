@@ -1,11 +1,12 @@
 .check-out-line{
-    background: linear-gradient(45deg, hsl(0deg 0% 100%), hsl(201deg 100% 14% / 47%));
+  background: linear-gradient(45deg, hsl(0deg 0% 100%), hsl(201deg 100% 14% / 47%));
     padding: 0;
     border: 1px hsl(201deg 74% 22%) solid;
     border-radius: 15px;
     max-width: 70vw;
     position: sticky;
     top: 50px;
+    height: fit-content;
 }
 
 .check-out-line a:first-child{

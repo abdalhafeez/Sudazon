@@ -13,9 +13,9 @@ import cream4 from "./assets/prods/cream/cream(4).jpg";
 import cream5 from "./assets/prods/cream/cream(5).jpg";
 import cream6 from "./assets/prods/cream/cream(6).jpg";
 
-import home1 from "./assets/prods/tools/home(1).jpg";
-import home2 from "./assets/prods/tools/home(2).jpg";
-import home3 from "./assets/prods/tools/home(3).jpg";
+// import home1 from "./assets/prods/tools/home(1).jpg";
+// import home2 from "./assets/prods/tools/home(2).jpg";
+// import home3 from "./assets/prods/tools/home(3).jpg";
 
 import clothes1 from "./assets/prods/tools/clothes(1).jpg";
 import clothes2 from "./assets/prods/tools/clothes(2).jpg";
@@ -32,6 +32,13 @@ import green3 from "./assets/prods/shoes/green/green(3).jpg";
 import green4 from "./assets/prods/shoes/green/green(4).jpg";
 import green5 from "./assets/prods/shoes/green/green(5).jpg";
 import green6 from "./assets/prods/shoes/green/green(6).jpg";
+
+import couch1 from "./assets/prods/couch/couch(1).jpg";
+import couch2 from "./assets/prods/couch/couch(2).jpg";
+import couch3 from "./assets/prods/couch/couch(3).jpg";
+import couch4 from "./assets/prods/couch/couch(4).jpg";
+import couch5 from "./assets/prods/couch/couch(5).jpg";
+import couch6 from "./assets/prods/couch/couch(6).jpg";
 
 import black1 from "./assets/prods/shoes/black/black(1).jpg";
 import black2 from "./assets/prods/shoes/black/black(2).jpg";
@@ -88,7 +95,7 @@ export const prods = [
   },
   {
     id: 5,
-    images: [home1, home2, home3],
+    images: [couch1, couch2, couch3, couch4, couch5, couch6],
     name: "مرطب بشرة اديل",
     desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
     smell: "بدون رائحة",

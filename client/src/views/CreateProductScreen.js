@@ -4,6 +4,7 @@ import { Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { productCreateAction } from "../store/actions/productsActions";
 import Errors from "../components/Errors";
+import { axiosInstance } from "../utils/axiosInstance";
 function CreateProduct() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -19,6 +20,7 @@ function CreateProduct() {
   const dispatch = useDispatch();
   const creatingProduct = useSelector((state) => state.addedProduct);
   const { item, error, loading } = creatingProduct;
+  console.log(item);
   useEffect(() => setErrors(error), [error]);
   const body = {
     name,
@@ -32,12 +34,31 @@ function CreateProduct() {
     images,
     reviews: [],
   };
+
   const createProductHandler = async (e) => {
     e.preventDefault();
     dispatch(productCreateAction(body));
     setTimeout(() => {
       setErrors([]);
     }, 5000);
+  };
+  const handleUpload = async (e) => {
+    const files = e.target.files;
+    const formData = new FormData();
+    for (const file of files) {
+      formData.append("images", file);
+    }
+    const config = {
+      headers: {
+        "Content-Type": "mutipart/form-data",
+      },
+    };
+    try {
+      const res = await axiosInstance.post("/uploads", formData, config);
+      setImages(res.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className=" row create-product pt-5">
@@ -160,7 +181,7 @@ function CreateProduct() {
           <Form.Control
             type="file"
             multiple
-            onChange={(e) => setImages(e.target.value)}
+            onChange={handleUpload}
             name="images"
           ></Form.Control>
         </Form.Group>

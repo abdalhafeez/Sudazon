@@ -21,7 +21,7 @@ function OrderSummary() {
   cart.shippingPrice = (Number(cart.itemsPrice) / 100) * 15;
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice;
   return (
-    <Container className="pt-5 row m-auto order-summary">
+    <Container className="pt-5 row m-auto order-summary h100">
       <CheckOutLine step1 step2 step3 step4 />
       <div className="col-12 row ">
         <h2 className="text-center tx-coral m-3"> تفاصيل الطلب</h2>

@@ -22,6 +22,7 @@ import RegisterScreen from "./views/RegisterScreen";
 import setAuthToken from "./utils/setAuthToken";
 import { useDispatch, useSelector } from "react-redux";
 import { userfetchAction } from "./store/actions/userActions";
+import Footer from "./components/Footer";
 function App() {
   const userInfo = useSelector((state) => state.userInfo);
   const { user } = userInfo;
@@ -56,6 +57,7 @@ function App() {
           <Route path="/order-summary" element={<OrderSummary />} />
           <Route path="/cart/:id" element={<CartScreen />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

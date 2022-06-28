@@ -47,7 +47,7 @@ function Slider({ products }) {
             <BuyBtn />
           </Card>
           <Link
-            to={`/product-details/${"62b71e52ecc055f3cf9367cf"}`}
+            to={`/product-details/${"62ba95c6901ed3caffdf3d51"}`}
             className="col-md-6 col-sm-12 row img-container"
           >
             <header>
