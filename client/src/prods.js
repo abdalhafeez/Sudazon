@@ -17,9 +17,6 @@ import cream6 from "./assets/prods/cream/cream(6).jpg";
 // import home2 from "./assets/prods/tools/home(2).jpg";
 // import home3 from "./assets/prods/tools/home(3).jpg";
 
-import clothes1 from "./assets/prods/tools/clothes(1).jpg";
-import clothes2 from "./assets/prods/tools/clothes(2).jpg";
-
 import pink1 from "./assets/prods/shoes/pink/pink(1).jpg";
 import pink2 from "./assets/prods/shoes/pink/pink(2).jpg";
 import pink3 from "./assets/prods/shoes/pink/pink(3).jpg";
@@ -68,7 +65,7 @@ export const prods = [
     id: 2,
     desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
     title: "Nike - نايكي",
-    images: [clothes1, green3, green4, clothes2, green5, green6],
+    images: [green3, green4, green5, green6],
   },
   {
     price: 5000,
