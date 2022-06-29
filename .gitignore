@@ -4,5 +4,6 @@
 node_modules/
 /node_modules/
 store.txt
+/config/
 /assets/
  
