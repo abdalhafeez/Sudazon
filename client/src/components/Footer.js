@@ -1,3 +1,4 @@
+import { prods } from "../prods";
 import "./styles/footer.css";
 export default function Footer() {
   return (
@@ -5,62 +6,56 @@ export default function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-md-3 col-6 m-auto pr-md-5">
-            <a href="#" className="footer-site-logo d-block mb-4">
-              Colorlib
-            </a>
+            <div className="footer-site-logo d-block mb-1">
+              <img src={prods[5].logo} alt="" />
+            </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-              quasi perferendis ratione perspiciatis accusantium.
+              <span className="tx-coral b">سودازون</span> للتسوق عبر الانترنيت‘
+              يتيح لك الفرصة لكسب وقتك بشرا~ك كل ما تحتاج من مكانك
             </p>
           </div>
           <div className="col-md-3 col-6 m-auto">
-            <ul className="list-unstyled nav-links">
+            <ul className="list-unstyled">
               <li>
-                <a href="#">Home</a>
+                <a href="#">الصفحة الرئيسئة</a>
               </li>
               <li>
-                <a href="#">About Us</a>
+                <a href="#">خدماتنا</a>
               </li>
               <li>
-                <a href="#">Portfolio</a>
+                <a href="#">تواصل معنا</a>
               </li>
               <li>
-                <a href="#">Services</a>
+                <a href="#">تعرف علينا</a>
               </li>
               <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-md-3 col-6 m-auto">
-            <ul className="list-unstyled nav-links">
-              <li>
-                <a href="#">Clients</a>
-              </li>
-              <li>
-                <a href="#">Team</a>
-              </li>
-              <li>
-                <a href="#">Career</a>
-              </li>
-              <li>
-                <a href="#">Testimonials</a>
-              </li>
-              <li>
-                <a href="#">Journal</a>
+                <a href="#">مدونة الموقع</a>
               </li>
             </ul>
           </div>
           <div className="col-md-3 col-6 m-auto">
             <ul className="list-unstyled nav-links">
               <li>
-                <a href="#">Privacy Policy</a>
+                <a href="#">العملاء</a>
               </li>
               <li>
-                <a href="#">Terms &amp; Conditions</a>
+                <a href="#">فريق سودازون</a>
               </li>
               <li>
-                <a href="#">Partners</a>
+                <a href="#">التوظيف</a>
+              </li>
+            </ul>
+          </div>
+          <div className="col-md-3 col-6 m-auto">
+            <ul className="list-unstyled nav-links">
+              <li>
+                <a href="#">سياسة الخصوصية</a>
+              </li>
+              <li>
+                <a href="#">الشروط &amp; الضوابط</a>
+              </li>
+              <li>
+                <a href="#">شركائنا</a>
               </li>
             </ul>
           </div>

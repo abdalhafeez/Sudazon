@@ -4,6 +4,18 @@ footer{
     color: var(--main-light);
     padding: 10px;
 }
-.footer a{
-text-decoration: none;
+
+.footer-site-logo img {
+width: 70px;
+height: 70px;
+border-radius: 10px;
+}
+footer li a{
+    color: var(--main-light);
+    text-decoration: none;
+    padding: 3px;margin: 2px;
+}
+footer li a:hover{
+    border-bottom: 1px white solid;
+    text-decoration: none;
 }

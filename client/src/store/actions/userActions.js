@@ -23,7 +23,7 @@ export const registerUserAction = (data) => async (dispatch) => {
     dispatch({
       type: USER_SIGNUP_FAILURE,
       payload:
-        error.response && error.response.data.message
+        error.response && error.response.data
           ? error.response.data.errors
           : error.message,
     });
@@ -41,7 +41,7 @@ export const loginUser = (data) => async (dispatch) => {
     dispatch({
       type: USER_LOGIN_FAILURE,
       payload:
-        error.response && error.response.data.message
+        error.response && error.response.data
           ? error.response.data
           : error.message,
     });

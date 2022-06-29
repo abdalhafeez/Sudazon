@@ -1,0 +1,29 @@
+.reviews{
+        padding: 5px;
+    /* background: hsl(180deg 40% 98%); */
+    margin-top: 20px;
+    border: 1px hsl(201deg 31% 41% / 9%) solid;
+    border-radius: 5px;
+    position: relative;
+}
+.reviews .review{
+    padding: 5px;
+    border-radius: 4px;
+    /* background: hsl(0deg 0% 100%); */
+    margin: 0;
+    /* box-shadow: var(--main-shadow); */
+
+}
+.levels{
+    width: fit-content;
+}
+.reviews button{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+ @media (max-width: 766px){
+    .reviews{
+        margin: auto;
+    }
+ }

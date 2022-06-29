@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSingleProduct } from "../store/actions/productsActions";
-import { PF } from "../utils/axiosInstance";
+import Reviews from "../components/Reviews";
 function ProductDetails() {
   const history = useLocation();
   const id = history.pathname.split("/")[2];
@@ -18,15 +18,12 @@ function ProductDetails() {
     dispatch(fetchSingleProduct(id));
   }, [dispatch, id]);
   const singleProduct = useSelector((state) => state.singleProduct);
-  const { /*loading, errors, */ product } = singleProduct;
+  const { loading, errors, product } = singleProduct;
   const handleAddOrder = () => {
     window.location.replace(`/cart/${product._id}?qant=${quantity}`);
   };
-  console.log(product);
-  let inStack = [];
-  for (let i = 0; i < product.inStack; i++) {
-    inStack.push(i);
-  }
+  console.log(loading, errors, product);
+
   return (
     <div className="row col-md-11 col-sm-12 single-product-details ">
       <h1>تفاصيل المنتج</h1>
@@ -51,12 +48,17 @@ function ProductDetails() {
               })}
             </div>
           </div>
-          <div className="product-info col-sm-12 col-md-6 mt-md-3 row">
+          <div className="product-info col-sm-12 col-md-6 mt-md-3 m-auto row">
             <div className="col col-md-6 col-12">
-              <h4 className="title">{tempProduct.title}</h4>
+              <h4 className="title tx-cyan">{tempProduct.name}</h4>
+
               <Rating />
-              <h6 className="price">{tempProduct.price}</h6>
-              <p className="desc">{tempProduct.desc}</p>
+
+              <p className="desc">
+                {tempProduct.desc} تكتيك على الاختيار بين المنتجات والمستلزمات
+                الرياضية من خلال تقديم خدمة ما تكتيك على الاختيار بين المنتجات
+                والمستلزمات الرياضية من خلال تقديم خدمة ما
+              </p>
             </div>
             <div className="col col-md-5 col-12 mx-auto shadow-sm menu row">
               <div className="col-5 col-md-12 main-info">
@@ -86,7 +88,7 @@ function ProductDetails() {
                       setQuantity(e.target.value);
                     }}
                   >
-                    {inStack.splice(1, inStack.length).map((num) => (
+                    {[...Array(product.inStack).keys()].map((num) => (
                       <option value={num} key={num}>
                         {num}
                       </option>
@@ -102,6 +104,7 @@ function ProductDetails() {
               </div>
             </div>
           </div>{" "}
+          <Reviews prods={prods} />
         </>
       ) : (
         <h2>Loading...</h2>

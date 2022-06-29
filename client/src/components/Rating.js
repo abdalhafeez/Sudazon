@@ -1,36 +1,29 @@
 import React from 'react'
 
-function Rating() {
+function Rating({ col }) {
   return (
-    <div>
-      <div className="levels">
-        <i className="bi bi-star" style={{ fontSize: 20, color: "coral" }}>
-          {" "}
-        </i>
-        <i
-          className="bi bi-star-half"
-          style={{ fontSize: 20, color: "coral" }}
-        ></i>
-        <i
-          className="bi bi-star-fill"
-          style={{ fontSize: 20, color: "coral" }}
-        ></i>
-        <i
-          className="bi bi-star-fill"
-          style={{ fontSize: 20, color: "coral" }}
-        ></i>
-        <i
-          className="bi bi-star-fill"
-          style={{ fontSize: 20, color: "coral" }}
-        ></i>
-      </div>
-      <div className="reviews">
-        <button className="button btn-sm btn-dark btn m-2">تعليق</button>
-        <span className=" text-muted small">5 علقوا عى هذا</span>
-        <span className="check-reviews">عرض المراجات</span>
-      </div>
+    <div className={`levels col-${col}`}>
+      <i className="bi bi-star" style={{ fontSize: 20, color: "coral" }}>
+        {" "}
+      </i>
+      <i
+        className="bi bi-star-half"
+        style={{ fontSize: 20, color: "coral" }}
+      ></i>
+      <i
+        className="bi bi-star-fill"
+        style={{ fontSize: 20, color: "coral" }}
+      ></i>
+      <i
+        className="bi bi-star-fill"
+        style={{ fontSize: 20, color: "coral" }}
+      ></i>
+      <i
+        className="bi bi-star-fill"
+        style={{ fontSize: 20, color: "coral" }}
+      ></i>
     </div>
-  )
+  );
 }
 
 export default Rating

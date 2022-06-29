@@ -9,12 +9,18 @@ import "./styles/categories.css";
 function Categories({ screenWidth }) {
   console.log(screenWidth);
   return (
-    <div className="categories col-md-9 col-12">
+    <div className="categories col-12 ">
       {prods.slice(0, 4).map((prod) => (
-        <div>
-          <div className="text-center text-dark">{prod.area}</div>
-          <img src={prod.images[3]} alt="category" key={prod.id} />
-        </div>
+        <>
+          <div className="">
+            <h6 className="cat-title ">{prod.area}</h6>
+            {prod.images.slice(0, 4).map((image) => (
+              <div className="">
+                <img src={image} alt="category" className="" key={prod.id} />
+              </div>
+            ))}
+          </div>
+        </>
       ))}
 
       {/*       

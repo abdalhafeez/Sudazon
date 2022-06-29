@@ -44,6 +44,7 @@ import black4 from "./assets/prods/shoes/black/black(4).jpg";
 import black5 from "./assets/prods/shoes/black/black(5).jpg";
 import black6 from "./assets/prods/shoes/black/black(6).jpg";
 import black7 from "./assets/prods/shoes/black/black(7).jpg";
+import logo from "./assets/logo.jpg";
 
 export const prods = [
   {
@@ -53,7 +54,7 @@ export const prods = [
     inStock: 4,
     id: 1,
     desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
-    title: "              حذاء رياضي برقبة منخفضة",
+    name: "              حذاء رياضي برقبة منخفضة",
     images: [pink1, pink2, pink3, pink4, pink5],
   },
 
@@ -64,7 +65,7 @@ export const prods = [
     characteristics: [],
     id: 2,
     desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
-    title: "Nike - نايكي",
+    name: "Nike - نايكي",
     images: [green3, green4, green5, green6],
   },
   {
@@ -74,7 +75,7 @@ export const prods = [
     characteristics: [],
     id: 3,
     desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
-    title: "نايكي رياضي",
+    name: "نايكي رياضي",
     images: [black1, black2, black3, black4, black5, black6, black7],
   },
   {
@@ -86,11 +87,25 @@ export const prods = [
     brand: "سلامة الطبية",
     usedFor: "لازالة حبة الشباب و تفتيح البشرة",
     category: "بشرة",
-    area: "التجميل",
+    area: "منتجات التجميل",
     characteristics: [],
     medical: true,
   },
   {
+    id: 5,
+    images: [couch1, couch2, couch3, couch4, couch5, couch6],
+    name: "مرطب بشرة اديل",
+    desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",
+    smell: "بدون رائحة",
+    brand: "سلامة الطبية",
+    usedFor: "لازالة حبة الشباب و تفتيح البشرة",
+    category: "بشرة",
+    area: "ادوات و اثاث المنزل",
+    characteristics: [],
+    medical: true,
+  },
+  {
+    logo: logo,
     id: 5,
     images: [couch1, couch2, couch3, couch4, couch5, couch6],
     name: "مرطب بشرة اديل",

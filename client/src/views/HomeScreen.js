@@ -21,7 +21,7 @@ function Home() {
   }, [dispatch]);
   return (
     <div className="home row" ref={homeRef}>
-      <div className="col-12 search-wrapper d-none d-sm-block  d-md-none">
+      <div className="col-12 search-wrapper  d-m-block d-sm-block  d-md-none d-lg-none d-xl-none">
         <Search />
       </div>
       <Slider products={products} />

@@ -44,9 +44,11 @@ function Topbar({ showMenu, setShowMenu }) {
       <div className="search-parent d-none d-ms-none d-md-block">
         <Search />
       </div>
-      <Link to="/" className="link text-center logo">
-        سودازون
-      </Link>
+      <h5>
+        <Link to="/" className="link text-center logo">
+          سودازون
+        </Link>
+      </h5>
     </div>
   );
 }
