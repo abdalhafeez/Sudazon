@@ -63,7 +63,7 @@ export default function Footer() {
 
         <div className="row ">
           <div className="col-12 text-center">
-            <div className="copyright mt-1 pt-5">
+            <div className="copyright mt-1">
               <p>
                 <small>&copy; 2019-2020 All Rights Reserved.</small>
               </p>

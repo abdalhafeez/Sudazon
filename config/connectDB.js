@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 module.exports = connectDB = () => {
   mongoose
     .connect(
-      // "mongodb://localhost/E-shop",
+      // "mongodb://localhost/sudazon",
       process.env.DB_URI,
       {
         useNewUrlParser: true,

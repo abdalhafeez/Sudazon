@@ -1,5 +1,4 @@
-import "./styles/shipping.css"
-import "../utils/btns.css";
+import "./styles/shipping.css";
 import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -121,4 +120,4 @@ function ShippingScreen() {
   );
 }
 
-export default ShippingScreen
+export default ShippingScreen;

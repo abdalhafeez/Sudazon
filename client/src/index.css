@@ -159,3 +159,166 @@ link{
   height: 50px;
   border-radius: 5px;
 }
+/* ////////////////////////////////////// */
+
+.cu-btn-coral{
+
+  cursor: pointer !important;
+
+      background: hsl(16deg 100% 66%) !important;
+    color: hsl(0deg 0% 100%) !important;
+    font-weight: 500 !important;
+    border-radius: 3px !important;
+    border: hsl(36deg 100% 84%) !important;
+    padding: 3px 5px !important;
+    transition: background ease-in-out 0.3s !important;
+
+}
+.cu-btn-coral:hover{
+
+      background: rgb(255, 99, 42) !important;
+
+}
+
+.cu-btn-coral-outline{
+
+  cursor: pointer !important;
+
+    background: transparent !important;
+    border: 1px hsl(16deg 100% 66%) solid !important;
+    color: hsl(16deg 100% 66%) !important;
+    font-weight: 500 !important;
+    border-radius: 3px !important;
+    padding: 3px 5px !important;
+    transition: all ease-in-out 0.3s
+}
+.cu-btn-coral-outline:hover{
+
+  background: coral !important;
+    border: 1px hsl(16deg 100% 66%) solid !important;
+    color: rgb(255, 255, 255) !important;
+    font-weight: 500 !important;
+    border-radius: 3px !important;
+    padding: 3px 5px !important;
+    transition: all ease-in-out 0.3s
+}
+
+/* Dark buttons */
+.cu-btn-dark{
+ 
+    cursor: pointer !important;
+    background: hsl(201deg 100% 14%) !important;
+    color: hsl(0deg 0% 100%) !important;
+    font-weight: 500 !important;
+    border-radius: 3px !important;
+    border: none !important;
+    padding: 3px 5px !important;
+    transition: all ease-in-out 0.3s !important;
+    text-decoration: none !important;
+}
+.cu-btn-dark:hover{
+ 
+    background: rgb(0, 78, 121) !important;
+color: white !important;
+}
+
+
+.cu-btn-dark-outline{
+   cursor: pointer !important;
+  background: transparent !important;
+    color: hsl(201deg 100% 14%) !important;
+    font-weight: 500 !important;
+    border-radius: 3px !important;
+    border: 1px hsl(201deg 100% 14%) solid !important;
+    padding: 3px 5px !important;
+    transition: background ease-in-out 0.3s !important;
+    text-decoration: none !important;
+
+}
+.cu-btn-dark-outline:hover{
+      color: white !important;
+    background: hsl(201deg 100% 14%) !important;
+    border: 1px hsl(201deg 100% 14%) solid !important;
+
+}
+
+/* cyan buttons */
+.cu-btn-cyan{
+ 
+    cursor: pointer !important;
+        background: hsl(180deg 100% 50%) !important;
+    color: hsl(201deg 100% 14%) !important;
+    font-weight: 500 !important;
+    border-radius: 3px !important;
+    border: none !important;
+    padding: 3px 5px !important;
+    transition: all ease-in-out 0.3s !important;
+    text-decoration: none !important;
+}
+.cu-btn-cyan:hover{
+ 
+    background: rgb(0, 148, 148) !important;
+color: white !important;
+}
+
+
+.cu-btn-cyan-outline{
+
+  cursor: pointer;
+  text-decoration: none !important;
+  background: transparent !important;
+    color: hsl(180deg 100% 50%) !important;
+    font-weight: 500 !important; 
+    border-radius: 3px !important;
+    border: 1px hsl(180deg 100% 50%) solid !important;
+    padding: 3px 5px !important;
+    transition: background ease-in-out 0.3s !important;
+      color: rgb(0, 0, 0) !important;
+
+}
+.cu-btn-cyan-outline:hover{
+
+     color: rgb(0, 0, 0)!important;
+    background: hsl(180deg 100% 50%)!important;
+ 
+}
+
+
+
+/* cyan buttons */
+.cu-btn-danger{
+    
+    cursor: pointer !important;
+    background: hsl(340deg 92% 45%) !important;
+    color: hsl(0deg 0% 100%) !important;
+    font-weight: 500 !important;
+    border-radius: 3px !important;
+    border: none !important;
+    padding: 2px 7px !important;
+    transition: all ease-in-out 0.3s !important;
+    text-decoration: none !important;
+}
+.cu-btn-danger:hover{
+background: rgb(252, 60, 124);
+}
+
+
+.cu-btn-danger-outline{
+
+  cursor: pointer;
+  text-decoration: none !important;
+  background: transparent !important;
+    color: hsl(180deg 100% 50%) !important;
+    font-weight: 500 !important; 
+    border-radius: 3px !important;
+    border: 1px hsl(180deg 100% 50%) solid !important;
+    padding: 3px 5px !important;
+    transition: background ease-in-out 0.3s !important;
+      color: rgb(0, 0, 0) !important;
+
+}
+.cu-btn-danger-outline:hover{
+     color: rgb(0, 0, 0)!important;
+    background: hsl(180deg 100% 50%)!important;
+ 
+}

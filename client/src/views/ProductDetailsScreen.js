@@ -6,11 +6,12 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSingleProduct } from "../store/actions/productsActions";
 import Reviews from "../components/Reviews";
-function ProductDetails() {
+import { PF } from "../utils/axiosInstance";
+function ProductDetailsScreen() {
   const history = useLocation();
   const id = history.pathname.split("/")[2];
   const dispatch = useDispatch();
-  const [bigImage, setBigImage] = useState(1);
+  const [bigImage, setBigImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const tempProduct = prods[0];
 
@@ -22,28 +23,34 @@ function ProductDetails() {
   const handleAddOrder = () => {
     window.location.replace(`/cart/${product._id}?qant=${quantity}`);
   };
-  console.log(loading, errors, product);
-
+  console.log(product);
   return (
     <div className="row col-md-11 col-sm-12 single-product-details ">
       <h1>تفاصيل المنتج</h1>
-      {prods ? (
+      {product ? (
         <>
           {" "}
           <div className="images-container col-sm-12 col-md-6 m-auto mt-3 row">
-            <div className="big-image col-12  shadow-sm">
-              <img src={prods[0].images[bigImage]} alt="product" />
+            <div className="big-image col-12  shadow-sm p-3">
+              <img
+                src={
+                  product?.images[bigImage] && PF + product?.images[bigImage]
+                }
+                alt="product"
+              />
             </div>
             <div className="small-images col-12">
-              {prods[0].images.map((image, index) => {
+              {product?.images?.map((image, index) => {
                 return (
-                  <img
-                    src={image}
-                    alt="product"
-                    className=""
-                    onClick={(e) => setBigImage(index)}
-                    key={index}
-                  />
+                  <div>
+                    <img
+                      src={PF + image}
+                      alt="product"
+                      className=""
+                      onClick={(e) => setBigImage(index)}
+                      key={index}
+                    />
+                  </div>
                 );
               })}
             </div>
@@ -113,4 +120,4 @@ function ProductDetails() {
   );
 }
 
-export default ProductDetails
+export default ProductDetailsScreen;

@@ -2,7 +2,7 @@ import Rating from "./Rating";
 import "./styles/reviews.css";
 function Reviews({ prods }) {
   return (
-    <div className="reviews col-md-11 col-sm-11 mms-md-auto  mt-3 row">
+    <div className="reviews col-md-11 col-sm-11 mms-md-auto  mt-2 row">
       <div className="col-11">
         <h4 className="tx-dark">المراجعات</h4>
         <button className="cu-btn-dark m-1">تعليق</button>

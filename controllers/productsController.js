@@ -3,7 +3,7 @@ const Product = require("../models/Product")
 
 // //
 const createProduct = async (req, res) => {
-  const errors = validationResult(req)
+  const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(401).json({ errors: errors.array() });
   }
@@ -20,31 +20,37 @@ const createProduct = async (req, res) => {
       color: req.body.color,
       inStack: req.body.inStack,
       size: req.body.size,
+      characteristics: req.body.characteristics,
+      ingredient: req.body.ingredient,
+      smell: req.body.smell,
+      usedFor: req.body.usedFor,
+      type: req.body.type,
+      manufacturer: req.body.manufacturer,
     });
-    await newProduct.save()
-    res.status(201).json(newProduct)
+    await newProduct.save();
+    res.status(201).json(newProduct);
   } catch (error) {
-    res.status(500).json({ msg: "Server Error" })
+    res.status(500).json({ msg: "Server Error" });
   }
-}
+};
 // //
 const deleteProduct = async (req, res) => {
   try {
-    const user = await User.findById(req.user.id)
+    const user = await User.findById(req.user.id);
     if (user.isAdmin) {
       const productToRemove = await Product.findOneAndRemove({
         _id: req.params.id,
-      })
+      });
       if (!productToRemove)
-        return res.status(400).json({ msg: "تم حذف هذا المنتج لسفا" })
-      res.status(200).json({ smg: "تم حذف المنتج بنجاح!" })
+        return res.status(400).json({ msg: "تم حذف هذا المنتج لسفا" });
+      res.status(200).json({ smg: "تم حذف المنتج بنجاح!" });
     } else {
-      res.status(401).json({ msg: "Not authorized" })
+      res.status(401).json({ msg: "Not authorized" });
     }
   } catch (error) {
-    res.status(500).json({ msg: "Server Error" })
+    res.status(500).json({ msg: "Server Error" });
   }
-}
+};
 // //
 const editProduct = async (req, res) => {
   try {
@@ -52,40 +58,41 @@ const editProduct = async (req, res) => {
       { _id: req.params.id },
       { $set: req.body },
       { new: true }
-    )
-    res.status(200).json({ msg: "تم تحديث بيانات المنتج بنجاح" })
+    );
+    res.status(200).json({ msg: "تم تحديث بيانات المنتج بنجاح" });
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ msg: "Server Error" })
+    console.log(error);
+    res.status(500).json({ msg: "Server Error" });
   }
-}
+};
 // //
 const fetchtProductById = async (req, res) => {
   try {
-    const product = await Product.findOne({ _id: req.params.id })
+    const product = await Product.findOne({ _id: req.params.id });
     if (!product) {
-      res.status(404).json({ errors: { msg: "عذرا هذا المنتج غير متاح" } })
+    return  res.status(404).json({ errors: { msg: "عذرا هذا المنتج غير متاح" } });
     }
-    return res.status(200).json(product)
+    return res.status(200).json(product);
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ msg: "Server Error" })
+    console.log(error.message);
+
+    res.status(500).json({ msg: "Server Error" });
   }
-}
+};
 // fetch all product
 const fetchAllProducts = async (req, res) => {
-  let queryCategory = req.query.category
-  let products
+  let queryCategory = req.query.category;
+  let products;
   try {
     queryCategory
       ? (products = await Product.find({ category: queryCategory }))
-      : (products = await Product.find())
-    res.status(200).json(products)
+      : (products = await Product.find());
+    res.status(200).json(products);
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ msg: "Server Error" })
+    console.log(error.message);
+    res.status(500).json({ msg: "Server Error" });
   }
-}
+};
 module.exports = {
   fetchAllProducts,
   createProduct,

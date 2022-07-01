@@ -13,21 +13,22 @@
     border-radius: 5px;
 }
 .single-product-details .big-image img{
-        height: 350px;
+        height: 300px;
     width: 100%;
     object-fit: contain;
     margin: auto;
 }
 .single-product-details .small-images{
-      display: flex;
+       display: flex;
     justify-content: center;
-    margin: 10px auto;
-    background: rgba(236, 236, 236, 0.31);
-    padding: 5px 20px;
+    margin: 2px auto;
+    background: hsl(0deg 0% 93% / 31%);
+    padding: 5px;
     border-radius: 5px;
     width: -moz-fit-content;
-    width: fit-content;
+    width: max-content;
     overflow-x: scroll;
+    overflow-y: clip;
 }
 
 .single-product-details .small-images::-webkit-scrollbar-track{
@@ -36,30 +37,45 @@ background-color: hsl(0deg 0% 84%);
       border-bottom-right-radius: 10px;
 }
 .single-product-details .small-images::-webkit-scrollbar{
-    height: 10px;
+    height: 5px;
  }
+ 
 .single-product-details .small-images::-webkit-scrollbar-thumb{
    background-color: var(--main-coral);
        border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
 
 }
-.single-product-details .small-images img {
-    height: 80px;width: 130px;
-    object-fit: contain;
-    border-radius: 5px;
+.small-images>div{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
     background: hsl(0deg 0% 100%);
     cursor: pointer;
-    transition: all ease-in-out 0.3s;
-    margin: 5px;
+    margin: 0 5px;
     box-shadow: -12px 15px 38px -34px hsl(0deg 0% 0%);
+    padding: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: all ease-in-out 0.3s;
+
 }
-/* .single-product-details .small-images img:first-child{
-    margin-right: 23px;
-    } */
-.single-product-details .small-images img:hover{
+.single-product-details .small-images div:hover{
    transform: scale(1.1);
 }
+.single-product-details .small-images img {
+    height: 70px;
+    width: 70px;
+    object-fit: contain;
+      border-radius: 50%;
+
+
+  
+}
+.single-product-details .small-images div:first-child{
+       margin-right: 190px;
+    }
+
 .single-product-details .menu{
         height: fit-content;
     padding: 5px;
@@ -156,6 +172,8 @@ background: hsl(201deg 31% 41%);
     background: #00f639;
 
 }
+ 
+ 
 /* /////////////////////////////////////// */
 /* @media (max-width: 650px){
 .single-product-details .small-images  {

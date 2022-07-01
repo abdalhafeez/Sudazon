@@ -18,6 +18,7 @@ export const productCreateAction = (body) => async (dispatch) => {
     res.data &&
       dispatch({ type: PRODUCT_CREATE_REQUEST_SUCCESS, payload: res.data });
   } catch (error) {
+    console.log(error);
     dispatch({
       type: PRODUCT_CREATE_REQUEST_FAILURE,
       payload:
@@ -28,40 +29,38 @@ export const productCreateAction = (body) => async (dispatch) => {
   }
 };
 
-
-
-
-
 export const fetchProducts = (id) => async (dispatch) => {
   try {
-    dispatch({ type: PRODUCT_LIST_REQUEST_START })
-    const res = await axiosInstance.get(`/products`)
+    dispatch({ type: PRODUCT_LIST_REQUEST_START });
+    const res = await axiosInstance.get(`/products`);
     res.data &&
-      dispatch({ type: PRODUCT_LIST_REQUEST_SUCCESS, payload: res.data })
+      dispatch({ type: PRODUCT_LIST_REQUEST_SUCCESS, payload: res.data });
   } catch (error) {
+    console.log(error);
     dispatch({
       type: PRODUCT_LIST_REQUEST_FAILURE,
       payload:
         error.response && error.response.data.errers
           ? error.response.data.errors
           : error.message,
-    })
+    });
   }
-}
+};
 
 export const fetchSingleProduct = (id) => async (dispatch) => {
   try {
-    dispatch({ type: SINGLE_PRODUCT_REQUEST_START })
-    const res = await axiosInstance.get(`/products/${id}`)
+    dispatch({ type: SINGLE_PRODUCT_REQUEST_START });
+    const res = await axiosInstance.get(`/products/${id}`);
     res.data &&
-      dispatch({ type: SINGLE_PRODUCT_REQUEST_SUCCESS, payload: res.data })
+      dispatch({ type: SINGLE_PRODUCT_REQUEST_SUCCESS, payload: res.data });
   } catch (error) {
+    console.log(error);
     dispatch({
       type: SINGLE_PRODUCT_REQUEST_FAILURE,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
           : error.message,
-    })
+    });
   }
-}
+};

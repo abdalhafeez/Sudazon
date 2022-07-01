@@ -5,29 +5,30 @@ import Rating from "./Rating"
 import { prods } from "../prods"
 import { useRef, useState, useEffect } from "react"
 import BuyBtn from "./BuyBtn"
+import { PF } from "../utils/axiosInstance";
 function Slider({ products }) {
-  const [sliderWidth, setSliderWidth] = useState(0)
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const slideRef = useRef()
+  const [sliderWidth, setSliderWidth] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slideRef = useRef();
+  const isMounted = useRef(true);
   useEffect(() => {
-    setSliderWidth(slideRef.current.clientWidth)
+    if (isMounted) setSliderWidth(slideRef.current.clientWidth);
     const slide = setInterval(() => {
       if (currentSlide === 0) {
-        setCurrentSlide(currentSlide + 1)
+        setCurrentSlide(currentSlide + 1);
       }
       if (currentSlide < prods.length - 1) {
-        setCurrentSlide(currentSlide + 1)
+        setCurrentSlide(currentSlide + 1);
       }
       if (currentSlide === prods.length - 1) {
-        setCurrentSlide(0)
+        setCurrentSlide(0);
       }
-      clearInterval(slide)
-    }, 5000)
-  }, [currentSlide])
-
+      clearInterval(slide);
+    }, 5000);
+  }, [currentSlide]);
   return (
     <div className="slider row col-sm-12 col-md-12">
-      {prods.map((prod) => (
+      {products?.map((prod) => (
         <div
           key={prod.id}
           className="slide row col-12 "
@@ -47,7 +48,7 @@ function Slider({ products }) {
             <BuyBtn />
           </Card>
           <Link
-            to={`/product-details/${"62ba95c6901ed3caffdf3d51"}`}
+            to={`/product-details/${prod._id}`}
             className="col-md-6 col-sm-12 row img-container"
           >
             <div className="d-sm-block d-md-none details-sm ">
@@ -60,7 +61,7 @@ function Slider({ products }) {
               </div>
             </div>
             <div className="col-12 ">
-              <img src={prod.images[1]} alt="product" />
+              <img src={PF + prod.images[1]} alt="product" />
             </div>
           </Link>
         </div>

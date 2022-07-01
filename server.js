@@ -1,6 +1,7 @@
 const dotenv = require("dotenv").config()
 var colors = require("colors/safe");
 const helmet = require("helmet");
+var morgan = require("morgan");
 const path = require("path");
 const express = require("express");
 const cors = require("cors");

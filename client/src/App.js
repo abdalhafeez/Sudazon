@@ -1,16 +1,9 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./utils/bootstrap.min.css";
 import "./index.css";
-import "./utils/btns.css";
 import { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Topbar from "./components/Topbar";
-import CreateProductScreen from "./views/CreateProductScreen";
 import CartScreen from "./views/CartScreen";
 import HomeScreen from "./views/HomeScreen";
 import ProductDetailsScreen from "./views/ProductDetailsScreen";
@@ -23,6 +16,7 @@ import setAuthToken from "./utils/setAuthToken";
 import { useDispatch, useSelector } from "react-redux";
 import { userfetchAction } from "./store/actions/userActions";
 import Footer from "./components/Footer";
+import DashboardScreen from "./views/DashboardScreen";
 function App() {
   const userInfo = useSelector((state) => state.userInfo);
   const { user } = userInfo;
@@ -50,7 +44,7 @@ function App() {
             path="/product-details/:id"
             element={<ProductDetailsScreen />}
           />
-          <Route path="/admin/create" element={<CreateProductScreen />} />
+          <Route path="/admin" element={<DashboardScreen />} />
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/register" element={<RegisterScreen />} />
           <Route path="/payment-method" element={<PaymentMethodScreen />} />

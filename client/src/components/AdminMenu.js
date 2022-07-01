@@ -6,7 +6,7 @@ function AdminMenu({ user, showMenu, setShowMenu, dispatch }) {
   return (
     <div className="admin-menu">
       <Dropdown.Toggle
-        className="cu-btn-coral"
+        className="cu-btn-cyan"
         onClick={(e) => {
           setShowMenu(!showMenu);
           e.stopPropagation();
@@ -19,8 +19,8 @@ function AdminMenu({ user, showMenu, setShowMenu, dispatch }) {
           <h5 className="role text-center tx-coral"> مشرف</h5>
         </li>
         <li>
-          <Link to="admin/create" onClick={() => setShowMenu(false)}>
-            اضافة منتج جديد
+          <Link to="admin" onClick={() => setShowMenu(false)}>
+            الادارة{" "}
           </Link>
         </li>
         <li>

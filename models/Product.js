@@ -33,6 +33,12 @@ const productSchema = mongoose.Schema(
       type: Number,
       default: 0,
     },
+    characteristics: [String],
+    ingredient: [String],
+    smell: { type: String },
+    usedFor: { type: String },
+    type: { type: String },
+    manufacturer: { type: String },
     reviews: [
       {
         user: {

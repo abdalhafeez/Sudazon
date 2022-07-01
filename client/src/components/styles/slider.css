@@ -1,5 +1,5 @@
 .slider{
-    height: 385px;
+      height: 385px;
     background: var(--main-light-dark);
     padding: 0;
     margin: auto;
@@ -11,8 +11,6 @@
     align-items: center;
     overflow: hidden;
     padding-bottom: 50px;
-    border-radius: 5px;
-    border: 1px hsl(180deg 46% 95%) solid;
 }
 .slider .slide{
       margin: auto;

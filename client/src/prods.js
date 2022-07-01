@@ -106,7 +106,7 @@ export const prods = [
   },
   {
     logo: logo,
-    id: 5,
+    id: 6,
     images: [couch1, couch2, couch3, couch4, couch5, couch6],
     name: "مرطب بشرة اديل",
     desc: "حذاء مريح للمشي ، يساعدك موقع تكتيك على الاختيار بين المنتجات والمستلزمات الرياضية من خلال تقديم خدمة ما",

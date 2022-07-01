@@ -1,0 +1,76 @@
+.dashoboard .menu{
+    background-color: var(--main-light-dark);
+    position: fixed;
+    right: 0;
+    top: 50px;
+    color: hsl(0deg 0% 100%);
+    height: 100vh;
+    padding-top: 10px;
+    }
+
+    .dashoboard .menu ul li{
+  margin: 5px;
+    padding: 0 5px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: hsl(202deg 23% 58% / 39%);
+    border-radius: 5px;
+    transition: background ease-in-out 0.3s;
+    cursor: pointer;
+    min-width: 100px;
+        }
+        .dashoboard .menu ul li:hover{
+    background: hsl(201deg 23% 58%);
+
+        }
+.dashoboard .menu ul i{
+    font-size: 23px;}
+   .dashoboard .menu h5{
+        border-bottom: 1px hsl(180deg 40% 98%) solid;
+    padding: 3px;
+    }
+
+
+
+
+.dashoboard .menu nav{
+    transform: translate(177px, 13px);
+    transition: all ease-in-out 0.3s;
+    }
+
+.show-nav{
+       transform: translate(0) !important;
+       }
+
+
+.dashoboard{
+    min-height: 100vh;
+}
+
+
+@media only screen and (max-width: 766px) {
+    .dashoboard    .menu ul{
+         display: flex;
+    padding: 5px;
+    justify-content: space-around;
+    list-style: none;
+
+        }
+      .dashoboard  .menu {
+     position: relative;
+    right: 0;
+    top: 50px;
+    color: hsl(0deg 0% 100%);
+    z-index: 99;
+    width: 100%;
+      height: fit-content
+        }
+
+        .dashoboard .menu nav{
+    transform: translate(177px, 13px);
+    transition: all ease-in-out 0.3s;
+    }
+
+    }
