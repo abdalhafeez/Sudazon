@@ -6,8 +6,7 @@ import "./styles/categories.css";
 //   }
 // }, []);
 // console.log(categories);
-function Categories({ screenWidth }) {
-  console.log(screenWidth);
+function Categories() {
   return (
     <div className="categories col-12 ">
       {prods.slice(0, 4).map((prod) => (

@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 module.exports = connectDB = () => {
   mongoose
     .connect(
-      // "mongodb://localhost/sudazon",
-      process.env.DB_URI,
+      "mongodb://localhost/sudazonDB",
+      // process.env.DB_URI,
       {
         useNewUrlParser: true,
       }

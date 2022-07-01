@@ -10,17 +10,17 @@ function Slider({ products }) {
   const [sliderWidth, setSliderWidth] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef();
-  const isMounted = useRef(true);
+  console.log(products);
   useEffect(() => {
-    if (isMounted) setSliderWidth(slideRef.current.clientWidth);
+    if (slideRef.current) setSliderWidth(slideRef.current.clientWidth);
     const slide = setInterval(() => {
       if (currentSlide === 0) {
         setCurrentSlide(currentSlide + 1);
       }
-      if (currentSlide < prods.length - 1) {
+      if (currentSlide < products.length - 1) {
         setCurrentSlide(currentSlide + 1);
       }
-      if (currentSlide === prods.length - 1) {
+      if (currentSlide === products.length - 1) {
         setCurrentSlide(0);
       }
       clearInterval(slide);
@@ -42,7 +42,7 @@ function Slider({ products }) {
               {/* <div className="buy-btn-parent">
                 <h5 className="brand">حذاء رياضي برقبة منخفضة</h5>
               </div> */}
-              <Card.Text className="desc">{prod.desc}</Card.Text>
+              <Card.Text className="desc">{prod.description}</Card.Text>
               <Rating />
             </Card.Body>
             <BuyBtn />
@@ -61,7 +61,7 @@ function Slider({ products }) {
               </div>
             </div>
             <div className="col-12 ">
-              <img src={PF + prod.images[1]} alt="product" />
+              <img src={PF + prod.images[0]} alt="product" />
             </div>
           </Link>
         </div>

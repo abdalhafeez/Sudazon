@@ -9,7 +9,10 @@ import {
   SINGLE_PRODUCT_REQUEST_START,
   SINGLE_PRODUCT_REQUEST_SUCCESS,
 } from "../constants/productConstants";
-export const ListProductsReducer = (state = { products: [] }, action) => {
+export const ListProductsReducer = (
+  state = { products: [], loading: false, error: null },
+  action
+) => {
   const { type, payload } = action;
   switch (type) {
     case PRODUCT_LIST_REQUEST_START:

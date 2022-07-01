@@ -48,7 +48,7 @@ function CreateProduct({ cream, shoes }) {
     type,
     manufacturer,
   };
-  console.log(item);
+  console.log(body);
 
   const createProductHandler = async (e) => {
     e.preventDefault();
@@ -85,6 +85,7 @@ function CreateProduct({ cream, shoes }) {
     try {
       const res = await axiosInstance.post("/uploads", formData, config);
       setImages(res.data);
+      console.log(images);
     } catch (error) {
       console.log(error);
     }
